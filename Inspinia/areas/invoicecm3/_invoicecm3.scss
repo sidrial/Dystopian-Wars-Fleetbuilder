@@ -1,0 +1,232 @@
+﻿/// <reference path="../../_variables.scss" />
+
+/*** SCHEME SCREEN ***/
+#schemeCm3MasterView {
+    .tab-pane > .panel-body {
+        border: none;
+        border-left: 1px solid $buck-gray;
+        width: 78%;
+        margin-left: 15px;
+    }
+
+    .nav-tabs {
+        border: none;
+
+        li {
+            &.active {
+                a {
+                    background-color: $buck-gray;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            a {
+                border: none;
+                border-radius: 0;
+                padding: .5em 1em;
+                font-size: 14px;
+                font-weight: 400;
+                color: #333;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Messages modal for iframe styling
+#emailModalBody {
+    overflow:  hidden;
+    min-height:650px;
+    width:100%;
+    }
+
+
+
+body.overflowY {
+    overflow-y: scroll;
+}
+
+/* Center and show overflow */
+.showOverflowCentered {
+    overflow: visible;
+    white-space: nowrap;
+    margin-left: -100%;
+    margin-right: -100%;
+}
+
+.verticalSpacing {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    vertical-align: top;
+}
+
+/* Fixes for _element.scss */
+
+#schemeMasterView {
+    margin-right: auto;
+}
+
+#schemeDetailView {
+    margin-left: auto;
+    float: left;
+}
+
+#schemeDetailView .panel-body {
+    width: auto;
+    margin-left: auto;
+}
+
+/* End of fixes for _element.scss */
+
+#schemeDetailView {
+}
+
+#schemeMasterView h4 {
+    font-size: medium;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+#schemeDetailView .websiteSelect {
+    width: auto;
+    max-width: 100%;
+}
+
+#schemeDetailView h2 {
+    display: inline-block;
+    margin-right: 0.2em;
+    margin-top: 0;
+    max-width: 100%;
+}
+
+.detailInEditMode #titleInput {
+    max-width: 100%;
+    margin-top: -3px;
+    margin-left: -2px;
+    margin-bottom: -4px;
+}
+
+#schemeDetailView .editTitleButton {
+    vertical-align: super;
+}
+
+#schemeDetailView h5 {
+    margin-bottom: 1.5em;
+}
+
+.detailInViewMode .step {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.detailInViewMode .fallbacks {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.detailInViewMode .actionDetailIndent {
+    width: 12em;
+    margin-left: 1em;
+}
+
+.detailInViewMode .adminFeeAmount {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.detailInViewMode .collectionAgency {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.detailInEditMode .errorText {
+    color: crimson;
+    font-weight: bold;
+    margin-bottom: 1em;
+    /*width: 100%;
+    background-color: #FFFCFC;
+    padding: 0.5em;*/
+}
+
+.detailInEditMode .errorHeader {
+    margin: 1.5em;
+}
+
+.detailInEditMode .daysAfterPrevious {
+    width: 3em;
+    display: inline-block;
+    text-align: right;
+}
+
+.detailInEditMode .actionType {
+    width: 12em;
+}
+
+.detailInEditMode .actionSettings {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.detailInEditMode .fallbacks {
+    display: inline-block;
+    margin-right: 1.5em;
+}
+
+.detailInEditMode .fallback {
+    display: inline-block;
+}
+
+.detailInEditMode .fallbackType {
+    width: 7em;
+}
+
+.detailInEditMode .interjection {
+    display: inline-block;
+    margin: 0 0.5em;
+    color: GrayText;
+}
+
+.detailInEditMode .firstInterjection {
+    width: 8em;
+}
+
+.detailInEditMode .fallbacks select {
+    width: 117px;
+}
+
+.detailInEditMode .template {
+    font-size: smaller;
+}
+
+.detailInEditMode .template div {
+    float: right;
+    width: 117px;
+    margin-right: 33px;
+    text-align: center;
+}
+
+.detailInEditMode .adminFeeCurrency {
+    width: 2em;
+}
+
+.detailInEditMode .adminFeeAmount {
+    width: 6.4em;
+}
+
+#templateConnection .cultureCell {
+    width: 13em;
+}
+
+#templateConnection td .immutableCellData {
+    padding-left: 0;
+}
+
+#templateConnection #templateConnectionTable {
+    min-width: 1200px;
+}

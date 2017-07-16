@@ -1,0 +1,78 @@
+﻿
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.siteContainer {
+    background-color: transparent;
+    font-family: heroic;
+    font-size: 20px;
+}
+
+.summary {
+    font-size: 40px;
+}
+
+.ibax {
+    background-color: white;
+    margin: 0 15px;
+}
+
+.ImageActive {
+    opacity: 1 !important;
+}
+
+    .ImageActive:hover {
+        cursor: pointer;
+    }
+
+.sizeS {
+    margin-bottom: 10px !important;
+}
+
+.sizeM {
+    margin-bottom: 20px !important;
+}
+
+.size_S {
+    /*margin-bottom: -40px;*/
+    width: 100px;
+}
+
+.size_M {
+    /*margin-bottom: -55px;*/
+    width: 150px;
+}
+
+.size_L {
+    width: 200px;
+}
+
+.squadronInfo img:only-of-type {
+    margin-bottom: 0 !important;
+}
+
+.squadronInfo img:last-child {
+    margin-bottom: 10px;
+}

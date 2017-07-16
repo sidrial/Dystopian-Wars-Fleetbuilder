@@ -1,0 +1,72 @@
+﻿#create-product {
+    .modal-subtitle {
+        text-align: center;
+        text-transform: uppercase;
+        color: $buck-gray;
+        font-size: 18px;
+        padding: 40px 0 0px;
+    }
+
+    .modal-title {
+        margin: 0 0 10px 0;
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+
+    .modal-description {
+        margin: 0 auto 30px auto;
+        display: block;
+        text-align: center;
+    }
+
+    .steps {
+        text-align: center;
+        margin-top: -2em;
+
+        .step {
+            display: inline-block;
+            font-size: 2em;
+            padding: 1em;
+            height: 0;
+            width: 0;
+            background-color: darken($buck-gray, 30);
+            margin: 0 .8em;
+            color: #fff;
+            position: relative;
+            border-radius: 50%;
+            -webkit-transition: background-color .5s ease-in;
+            transition: background-color .5s ease-in;
+
+            .wizard-icon-fix {
+                margin-left: -2px
+            }
+
+            &.active {
+                background-color: darken($buck-gray, 60);
+            }
+
+            span {
+                position: absolute;
+                top: .5em;
+                left: .55em;
+            }
+        }
+    }
+
+    em.info {
+        display: inline-block;
+        margin: 6px 0 0 0;
+        padding-left: 15px;
+        position: relative;
+
+        span {
+            position: absolute;
+            left: 3px;
+            top: 3px;
+        }
+    }
+
+    #step4 .fa {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,33 @@
+﻿.antiFraudParameters > span:nth-child(odd) 
+{
+    border-left: 2px dotted #808080;
+    padding-left: 4px;
+
+    &:first-child {
+        border: none;
+        padding-left: 0;
+    }
+}
+
+#editCheck,
+#antiFraudWizard {
+    .checkbox-primary {
+        .tooltipped {
+            margin-left: -40px;
+        }
+    }
+   
+    .checkbox-primary label::before {
+        left: 150px;
+    }
+
+    .checkbox-primary input[type="checkbox"]:checked + label::before {
+        left: 150px;
+    }
+
+     .checkbox-primary input[type="checkbox"]:checked + label::after {
+        left: 150px;
+    }
+}
+
+

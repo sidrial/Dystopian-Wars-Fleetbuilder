@@ -1,0 +1,50 @@
+/*
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.2
+ *
+*/
+
+// Variables, Mixins
+@import "_variables.scss";
+@import "_mixins.scss";
+
+
+// INSPINIA Theme Elements
+@import "_typography.scss";
+@import "_navigation.scss";
+@import "_top_navigation.scss"; 
+@import "_buttons.scss";
+@import "_badgets_labels.scss";
+@import "_elements.scss";
+@import "_sidebar.scss";
+@import "_base.scss";
+@import "_pages.scss";
+@import "_chat.scss";
+@import "_metismenu.scss"; 
+@import "_spinners.scss";
+
+// Landing page 
+@import "_landing.scss";
+
+// RTL Support
+@import "_rtl.scss"; 
+
+// For demo only - config box style
+@import "_theme-config.scss";
+
+// INSPINIA Skins 
+@import "_skins.scss";
+@import "_md-skin.scss";
+
+// Media query style
+@import "_media.scss";
+
+@import "_jquery_steps.scss"; 
+
+// Custom style
+// Your custom style to override base style
+@import "_custom.scss"; 
+
+
+

@@ -1,0 +1,233 @@
+﻿#ac-editor-wrapper,
+#ac-sms-editor-wrapper {
+    position: relative;
+}
+
+// workaround for MS InternetExplorer so still see Ace editor
+.msie-editor {
+    min-height: 600px;
+}
+
+#sms-editor,
+#editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#editor-preview-basic {
+    border: none;
+}
+
+#sms-editor-preview-advanced,
+#editor-preview-advanced { 
+    position: relative;
+
+    .embed-responsive {
+        height: 100%;
+    }
+}
+
+#MainContent.fixed {
+    position: absolute;
+    top: 160px;
+    bottom: 0;
+    right: 10px;
+    left: 10px;
+    padding-top: 60px;
+}
+
+
+.editor-wrapper {
+    position: relative;      
+}
+
+#sms-templateEditor,
+#templateEditor .alignedWebsiteKey {
+    font-weight: lighter;
+}
+
+/* Fix the modal header, which unintentionally gets covered and colored by our absolute/padding fix for '100% height including fixed-size heading' */
+#editModal .modal-header,
+#editSmsModal .modal-header,
+#editBasicModal .modal-header {
+    z-index: 1;
+    background-color: white;
+}
+
+/* Clearfix was not working */
+#editModal .clearfix,
+#editSmsModal .clearfix,
+#editBasicModal .clearfix {
+    clear: both;
+}
+
+/* Fix the border */
+#editBasicModal .bottom-line,
+#editSmsModal .bottom-line,
+#editModal .bottom-line {
+    border-bottom: 1px solid #e7eaec;
+}
+
+/* Fix the border */
+#editBasicModal .no-line,
+#editSmsModal .no-line,
+#editModal .no-line {
+    border-top: none;
+}
+
+/* Alternate background color for certain list items */
+#editBasicModal a.alternate-list-item-background:link,
+#editSmsModal a.alternate-list-item-background:link,
+#editModal a.alternate-list-item-background:link {
+    background-color: #fbfbfb;
+}
+
+/* Fix two half-width boxes from spilling over the container */
+.editor-wrapper .ibox.half-height {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px;
+}
+
+/* Fix double bottom spacing caused by all the nested boxes and groups */
+.editor-wrapper .ibox .slimScrollDiv,
+.editor-wrapper .ibox .list-group {
+    margin-bottom: 0px !important;
+    max-height: 100%;
+}
+
+#editBasicModal #basic-left-column {
+    overflow-y: auto;
+
+    .tooltip-editable-areas {
+        margin-top: 1em;
+    }
+}
+
+#editBasicModal #basic-mid-column .ibox {
+    overflow-y: auto;
+    background-color: white;
+}
+
+#editBasicModal #basic-right-column .ibox-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#editBasicModal #tags {
+    overflow-x: hidden;
+}
+
+#static-header {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    right: 10px;
+
+    h3 {
+        margin: 0;
+        line-height: 35px;
+    }
+}
+
+#basic-header {
+    margin: 0 0 10px;
+
+    h3 {
+        margin: 0;
+        line-height: 35px;
+    }
+}
+
+.flexDivider {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    > div {
+        display: table-cell;
+    }
+
+    .divider {        
+        position: relative;        
+        text-align: center;
+        vertical-align: middle;
+
+        > span {
+            cursor: col-resize;
+            padding: 30px 3px;
+            background: #fff;
+            -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+            border-radius: 4px;                        
+        }
+        &.active {
+            > span {
+                background: #efefef;
+            }
+        }
+        
+    }
+
+    &.active {
+        
+        #sms-editor-preview,
+        #editor-preview:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+} 
+
+// gallery
+.lightBoxGallery {
+    a {
+        width: 31%;
+        padding: 31% 0 0 0;
+        height: 0;
+        margin: 1%;
+        overflow: hidden;
+        float: left;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            min-width: 100%;            
+            min-height: 100%;            
+            max-width: 200%;            
+            max-height: 200%;            
+        }
+    }
+}
+
+.letter-overlay {
+    height: 100%;
+    width: 210mm;
+    min-width: 210mm;
+    max-width: 210mm;
+    left: 0;
+    top: 5mm; /* Move down slightly, since letter can move up in envelope (obscuring return address), but not further down */
+    position: absolute;
+    pointer-events: none;
+
+    img {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }    
+}

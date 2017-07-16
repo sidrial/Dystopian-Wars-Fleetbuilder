@@ -1,0 +1,108 @@
+﻿/// <reference path="../../_variables.scss" />
+
+.ibox-content.cmreport {
+    padding: 0 15px;
+    overflow: hidden;
+
+    .col-sm-4,
+    .col-sm-8 {
+        border-right: 1px solid #e7eaec;
+        border-top: 1px solid #e7eaec;
+
+        &.no-top-border {
+            border-top: none;
+        }
+    }
+}
+
+#chartPercentagePaid,
+#chartInvoices {
+    margin-left: -8px;
+    margin: 0 0 15px 0;
+}
+
+#cmreport {
+    .widgets {
+        margin-right: -16px;
+
+
+        @media (min-width: 768px) {
+            > div {
+                padding: 0 25px;
+            }
+        }
+
+        h5 {
+            font-weight: 100;
+            font-size: 1.6em;
+            margin: 25px 0 0;
+            padding-bottom: 14px;
+        }
+    }
+
+    .total-item {
+        display: inline-block;
+        padding: 10px 0 10px 10px;
+        border-left: 6px solid $buck-dirty-yellow;
+        background: #fff;
+        margin: 0 15px 15px 0;
+
+        &.secondary {
+            border-color: $buck-more-gray;
+        }
+
+        &.failed {
+            border-color: $red;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+
+        .currency {
+            font-size: 0.6em;
+            color: $buck-bluish-gray;
+        }
+    }
+
+    .stat-percent {
+        padding-top: 50%;
+        margin-top: -6px;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+}
+
+.compare-banner {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -81px;
+    width: 400px;
+    z-index: 2001;
+    background-color: $buck-bluish-gray;
+    color: white;
+    padding: 10px 10px 10px 20px;
+    font-weight: bold;
+    line-height: 30px;
+
+    .btn {
+        margin-left: 10px;
+    }
+}
+
+#compareModal {
+    th:nth-child(1n+2),
+    td:nth-child(1n+2) {
+        max-width: 130px;
+        background-color: white;
+        border-right: 1px solid $buck-gray;
+    }
+
+    .comparison-header {
+        border-bottom: 1px solid #E6EBEC;
+        font-size: 1.1em;
+    }
+}

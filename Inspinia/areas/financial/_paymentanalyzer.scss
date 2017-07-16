@@ -1,0 +1,60 @@
+﻿/// <reference path="../../_variables.scss" />
+
+#reconcilePostOptions .dropdown-menu {
+    .divider {
+        background-color: $buck-grayish-blue;
+    }
+
+    &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid $buck-bluish-gray;
+        border-bottom-color: $buck-bluish-gray;
+        top: -5px;
+        left: 7px;
+    }
+
+    border-top: none;
+    box-shadow: none;
+    color: white;
+    background-color: $buck-bluish-gray;
+    border-radius: 0;
+
+    > li {
+        > a {
+            padding: 7px 10px;
+            margin: 0;
+
+            &:hover {
+                background: $buck-grayish-blue;
+                color: inherit;
+            }
+        }
+
+        > button {
+            padding: 7px 19px;
+            border: none;
+            width: 100%;
+            text-align: right;
+            font-weight: normal;
+
+            &:hover {
+                background: $buck-grayish-blue;
+                color: inherit;
+            }
+        }
+    }
+}
+
+.bpa-container-min-height {
+    min-height: 300px;
+}
+
+#reconcileForm {
+    .vertical-align-middle {
+        vertical-align: middle;
+    }
+}

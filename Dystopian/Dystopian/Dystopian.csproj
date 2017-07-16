@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CB894B8-87A9-4CA3-9D95-A7997ABD3301}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dystopian</RootNamespace>
+    <AssemblyName>Dystopian</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Option.cs" />
+    <Compile Include="Models\Ship.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\BG.jpg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Inspinia\animate.css" />
+    <Content Include="Content\Inspinia\style.css" />
+    <Content Include="Content\Inspinia\style.min.css" />
+    <Content Include="Content\metisMenu.css" />
+    <Content Include="Content\metisMenu.min.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\hover-min.css" />
+    <Content Include="Content\Models\a17.png" />
+    <Content Include="Content\Models\a6v.png" />
+    <Content Include="Content\Models\a9v.png" />
+    <Content Include="Content\Models\affondatore.png" />
+    <Content Include="Content\Models\agincourt.png" />
+    <Content Include="Content\Models\agra.png" />
+    <Content Include="Content\Models\ajagava.png" />
+    <Content Include="Content\Models\alamo.png" />
+    <Content Include="Content\Models\alea.png" />
+    <Content Include="Content\Models\alma.png" />
+    <Content Include="Content\Models\alsace1.png" />
+    <Content Include="Content\Models\alsace2.png" />
+    <Content Include="Content\Models\annapolis.png" />
+    <Content Include="Content\Models\antaka.png" />
+    <Content Include="Content\Models\apollo.png" />
+    <Content Include="Content\Models\arashi.png" />
+    <Content Include="Content\Models\arbalete.png" />
+    <Content Include="Content\Models\archer.png" />
+    <Content Include="Content\Models\archimedes.png" />
+    <Content Include="Content\Models\arci.png" />
+    <Content Include="Content\Models\aristotle.png" />
+    <Content Include="Content\Models\arminius.png" />
+    <Content Include="Content\Models\arronax.png" />
+    <Content Include="Content\Models\assaultinfantry.png" />
+    <Content Include="Content\Models\athea.png" />
+    <Content Include="Content\Models\atlas.png" />
+    <Content Include="Content\Models\attacker.png" />
+    <Content Include="Content\Models\atticus.png" />
+    <Content Include="Content\Models\aufseher.png" />
+    <Content Include="Content\Models\augusta.png" />
+    <Content Include="Content\Models\avenger.png" />
+    <Content Include="Content\Models\avion.png" />
+    <Content Include="Content\Models\azov.png" />
+    <Content Include="Content\Models\bansan.png" />
+    <Content Include="Content\Models\baronet.png" />
+    <Content Include="Content\Models\bastille.png" />
+    <Content Include="Content\Models\bastion.png" />
+    <Content Include="Content\Models\belgorod.png" />
+    <Content Include="Content\Models\blucher.png" />
+    <Content Include="Content\Models\borodino.png" />
+    <Content Include="Content\Models\boston.png" />
+    <Content Include="Content\Models\bounty.png" />
+    <Content Include="Content\Models\brunel.png" />
+    <Content Include="Content\Models\bs3.png" />
+    <Content Include="Content\Models\bunkerlarge.png" />
+    <Content Include="Content\Models\bunkermedium.png" />
+    <Content Include="Content\Models\bunkersmall.png" />
+    <Content Include="Content\Models\bwSAS.png" />
+    <Content Include="Content\Models\callimachus.png" />
+    <Content Include="Content\Models\canda.png" />
+    <Content Include="Content\Models\capek.png" />
+    <Content Include="Content\Models\cerberus.png" />
+    <Content Include="Content\Models\cf4.png" />
+    <Content Include="Content\Models\cfSAS.png" />
+    <Content Include="Content\Models\chanura.png" />
+    <Content Include="Content\Models\charlemagne.png" />
+    <Content Include="Content\Models\cherbourg.png" />
+    <Content Include="Content\Models\chevalier.png" />
+    <Content Include="Content\Models\chiri.png" />
+    <Content Include="Content\Models\chui.png" />
+    <Content Include="Content\Models\cinquedea.png" />
+    <Content Include="Content\Models\cleomedes.png" />
+    <Content Include="Content\Models\closesupportinfantry.png" />
+    <Content Include="Content\Models\coabunker.png" />
+    <Content Include="Content\Models\coabunkercomplex.png" />
+    <Content Include="Content\Models\coatower.png" />
+    <Content Include="Content\Models\colossus.png" />
+    <Content Include="Content\Models\columbia.png" />
+    <Content Include="Content\Models\couronne.png" />
+    <Content Include="Content\Models\crocodile.png" />
+    <Content Include="Content\Models\cromwell.png" />
+    <Content Include="Content\Models\daedalus.png" />
+    <Content Include="Content\Models\dao.png" />
+    <Content Include="Content\Models\deathbringer.png" />
+    <Content Include="Content\Models\defiance.png" />
+    <Content Include="Content\Models\devak.png" />
+    <Content Include="Content\Models\dfa170.png" />
+    <Content Include="Content\Models\dieppe.png" />
+    <Content Include="Content\Models\diogenes.png" />
+    <Content Include="Content\Models\diophantus.png" />
+    <Content Include="Content\Models\dominion.png" />
+    <Content Include="Content\Models\doncaster.png" />
+    <Content Include="Content\Models\donnerfaust.png" />
+    <Content Include="Content\Models\dudinka.png" />
+    <Content Include="Content\Models\dun.png" />
+    <Content Include="Content\Models\eagle.png" />
+    <Content Include="Content\Models\ecuyer.png" />
+    <Content Include="Content\Models\eimcSAS.png" />
+    <Content Include="Content\Models\elbe.png" />
+    <Content Include="Content\Models\elysium.png" />
+    <Content Include="Content\Models\emperor.png" />
+    <Content Include="Content\Models\engineerinfantry.png" />
+    <Content Include="Content\Models\enterprise.png" />
+    <Content Include="Content\Models\eotbsbunker.png" />
+    <Content Include="Content\Models\eotbsbunkercomplex.png" />
+    <Content Include="Content\Models\eotbstower.png" />
+    <Content Include="Content\Models\epaulard.png" />
+    <Content Include="Content\Models\epicurus.png" />
+    <Content Include="Content\Models\euclid.png" />
+    <Content Include="Content\Models\fafnir.png" />
+    <Content Include="Content\Models\faust.png" />
+    <Content Include="Content\Models\fettah.png" />
+    <Content Include="Content\Models\forbes.png" />
+    <Content Include="Content\Models\fortuna.png" />
+    <Content Include="Content\Models\foucaultr6.png" />
+    <Content Include="Content\Models\foxhound.png" />
+    <Content Include="Content\Models\freedom.png" />
+    <Content Include="Content\Models\frelon.png" />
+    <Content Include="Content\Models\fresnel.png" />
+    <Content Include="Content\Models\fsabunker.png" />
+    <Content Include="Content\Models\fsabunkercomplex.png" />
+    <Content Include="Content\Models\fsatower.png" />
+    <Content Include="Content\Models\fujin.png" />
+    <Content Include="Content\Models\furieux.png" />
+    <Content Include="Content\Models\fury.png" />
+    <Content Include="Content\Models\gadeiros.png" />
+    <Content Include="Content\Models\galen.png" />
+    <Content Include="Content\Models\geier.png" />
+    <Content Include="Content\Models\georgetown.png" />
+    <Content Include="Content\Models\gewitterwolke.png" />
+    <Content Include="Content\Models\gladius.png" />
+    <Content Include="Content\Models\grele.png" />
+    <Content Include="Content\Models\griffon.png" />
+    <Content Include="Content\Models\grom.png" />
+    <Content Include="Content\Models\gryf.png" />
+    <Content Include="Content\Models\guandao.png" />
+    <Content Include="Content\Models\guilford.png" />
+    <Content Include="Content\Models\hachiman.png" />
+    <Content Include="Content\Models\hades.png" />
+    <Content Include="Content\Models\hawk.png" />
+    <Content Include="Content\Models\hecSAS.png" />
+    <Content Include="Content\Models\herotodus.png" />
+    <Content Include="Content\Models\hippasus.png" />
+    <Content Include="Content\Models\hisar.png" />
+    <Content Include="Content\Models\hoi.png" />
+    <Content Include="Content\Models\honshu.png" />
+    <Content Include="Content\Models\honshu1.png" />
+    <Content Include="Content\Models\honshu2.png" />
+    <Content Include="Content\Models\honshu3.png" />
+    <Content Include="Content\Models\hotchft12.png" />
+    <Content Include="Content\Models\huntsman.png" />
+    <Content Include="Content\Models\hussar.png" />
+    <Content Include="Content\Models\icarus.png" />
+    <Content Include="Content\Models\ika.png" />
+    <Content Include="Content\Models\illustrious.png" />
+    <Content Include="Content\Models\imperium.png" />
+    <Content Include="Content\Models\inari.png" />
+    <Content Include="Content\Models\independence.png" />
+    <Content Include="Content\Models\indus.png" />
+    <Content Include="Content\Models\jackson.png" />
+    <Content Include="Content\Models\jager.png" />
+    <Content Include="Content\Models\janus.png" />
+    <Content Include="Content\Models\jhasa.png" />
+    <Content Include="Content\Models\jian.png" />
+    <Content Include="Content\Models\johnhenry.png" />
+    <Content Include="Content\Models\kagoshima.png" />
+    <Content Include="Content\Models\kaiju.png" />
+    <Content Include="Content\Models\kaiserkarl.png" />
+    <Content Include="Content\Models\kamchatka.png" />
+    <Content Include="Content\Models\kanuni.png" />
+    <Content Include="Content\Models\kazimov.png" />
+    <Content Include="Content\Models\keho.png" />
+    <Content Include="Content\Models\khatanga.png" />
+    <Content Include="Content\Models\kitsune.png" />
+    <Content Include="Content\Models\kiyohime.png" />
+    <Content Include="Content\Models\kobbunker.png" />
+    <Content Include="Content\Models\kobbunkercomplex.png" />
+    <Content Include="Content\Models\kobtower.png" />
+    <Content Include="Content\Models\kodSAS.png" />
+    <Content Include="Content\Models\komainu.png" />
+    <Content Include="Content\Models\konigsberg.png" />
+    <Content Include="Content\Models\korsor.png" />
+    <Content Include="Content\Models\kostroma.png" />
+    <Content Include="Content\Models\kursk.png" />
+    <Content Include="Content\Models\laman.png" />
+    <Content Include="Content\Models\landingfield.png" />
+    <Content Include="Content\Models\largelanding.png" />
+    <Content Include="Content\Models\larochelle.png" />
+    <Content Include="Content\Models\lee.png" />
+    <Content Include="Content\Models\lexington.png" />
+    <Content Include="Content\Models\liberty.png" />
+    <Content Include="Content\Models\lineinfantry.png" />
+    <Content Include="Content\Models\liuxing.png" />
+    <Content Include="Content\Models\loisSAS.png" />
+    <Content Include="Content\Models\lordhood.png" />
+    <Content Include="Content\Models\lyon.png" />
+    <Content Include="Content\Models\lysanderapc.png" />
+    <Content Include="Content\Models\lysandermortar.png" />
+    <Content Include="Content\Models\lysanderobservation.png" />
+    <Content Include="Content\Models\lzsrycerz.png" />
+    <Content Include="Content\Models\magenta1.png" />
+    <Content Include="Content\Models\magenta2.png" />
+    <Content Include="Content\Models\majesty.png" />
+    <Content Include="Content\Models\manticore.png" />
+    <Content Include="Content\Models\mars.png" />
+    <Content Include="Content\Models\marseille.png" />
+    <Content Include="Content\Models\marteau.png" />
+    <Content Include="Content\Models\masaulle.png" />
+    <Content Include="Content\Models\mediumlanding.png" />
+    <Content Include="Content\Models\megha.png" />
+    <Content Include="Content\Models\merchantmen.png" />
+    <Content Include="Content\Models\merlin.png" />
+    <Content Include="Content\Models\metzger.png" />
+    <Content Include="Content\Models\minsk.png" />
+    <Content Include="Content\Models\mizrak.png" />
+    <Content Include="Content\Models\mizuchi.png" />
+    <Content Include="Content\Models\mk2armstrong.png" />
+    <Content Include="Content\Models\monarch.png" />
+    <Content Include="Content\Models\moskva.png" />
+    <Content Include="Content\Models\moustique.png" />
+    <Content Include="Content\Models\myobu.png" />
+    <Content Include="Content\Models\myshkin.png" />
+    <Content Include="Content\Models\n3liege.png" />
+    <Content Include="Content\Models\nakatsu.png" />
+    <Content Include="Content\Models\nemesis.png" />
+    <Content Include="Content\Models\neworleans.png" />
+    <Content Include="Content\Models\nikel.png" />
+    <Content Include="Content\Models\novgorod.png" />
+    <Content Include="Content\Models\nu.png" />
+    <Content Include="Content\Models\oceanus.png" />
+    <Content Include="Content\Models\oeSAS.png" />
+    <Content Include="Content\Models\oilrig.png" />
+    <Content Include="Content\Models\oimiagenyudo.png" />
+    <Content Include="Content\Models\olympus.png" />
+    <Content Include="Content\Models\onryo.png" />
+    <Content Include="Content\Models\orion.png" />
+    <Content Include="Content\Models\orlov.png" />
+    <Content Include="Content\Models\orpheus.png" />
+    <Content Include="Content\Models\pebunker.png" />
+    <Content Include="Content\Models\pebunkercomplex.png" />
+    <Content Include="Content\Models\pericles.png" />
+    <Content Include="Content\Models\pesets.png" />
+    <Content Include="Content\Models\petower.png" />
+    <Content Include="Content\Models\pflicht.png" />
+    <Content Include="Content\Models\philadelphia.png" />
+    <Content Include="Content\Models\phoenician.png" />
+    <Content Include="Content\Models\pioneer.png" />
+    <Content Include="Content\Models\plato.png" />
+    <Content Include="Content\Models\plcSAS.png" />
+    <Content Include="Content\Models\plutarch.png" />
+    <Content Include="Content\Models\poltava.png" />
+    <Content Include="Content\Models\princeton.png" />
+    <Content Include="Content\Models\prometheus.png" />
+    <Content Include="Content\Models\protector.png" />
+    <Content Include="Content\Models\ptolemy.png" />
+    <Content Include="Content\Models\pyb2.png" />
+    <Content Include="Content\Models\pytheus.png" />
+    <Content Include="Content\Models\r4medium.png" />
+    <Content Include="Content\Models\radarstation.png" />
+    <Content Include="Content\Models\raggnarok.png" />
+    <Content Include="Content\Models\raijin.png" />
+    <Content Include="Content\Models\reaper.png" />
+    <Content Include="Content\Models\recke.png" />
+    <Content Include="Content\Models\regent.png" />
+    <Content Include="Content\Models\reims.png" />
+    <Content Include="Content\Models\reno.png" />
+    <Content Include="Content\Models\renocommand.png" />
+    <Content Include="Content\Models\requin.png" />
+    <Content Include="Content\Models\reserveinfantry.png" />
+    <Content Include="Content\Models\resolution1.png" />
+    <Content Include="Content\Models\revere.png" />
+    <Content Include="Content\Models\rhine.png" />
+    <Content Include="Content\Models\riever.png" />
+    <Content Include="Content\Models\ritter.png" />
+    <Content Include="Content\Models\rofbunker.png" />
+    <Content Include="Content\Models\rofbunkercomplex.png" />
+    <Content Include="Content\Models\roftower.png" />
+    <Content Include="Content\Models\ronin.png" />
+    <Content Include="Content\Models\rostov.png" />
+    <Content Include="Content\Models\rudnitsky.png" />
+    <Content Include="Content\Models\ruler.png" />
+    <Content Include="Content\Models\rusbunker.png" />
+    <Content Include="Content\Models\rusbunkercomplex.png" />
+    <Content Include="Content\Models\rustower.png" />
+    <Content Include="Content\Models\ryuo.png" />
+    <Content Include="Content\Models\sadrazam.png" />
+    <Content Include="Content\Models\saintmalo.png" />
+    <Content Include="Content\Models\sanfrancisco.png" />
+    <Content Include="Content\Models\saransk.png" />
+    <Content Include="Content\Models\saratoga.png" />
+    <Content Include="Content\Models\savannah.png" />
+    <Content Include="Content\Models\saxony.png" />
+    <Content Include="Content\Models\scutum.png" />
+    <Content Include="Content\Models\seydlitz.png" />
+    <Content Include="Content\Models\shildtrager.png" />
+    <Content Include="Content\Models\sigurd.png" />
+    <Content Include="Content\Models\sinop.png" />
+    <Content Include="Content\Models\sirius.png" />
+    <Content Include="Content\Models\skagerrak.png" />
+    <Content Include="Content\Models\skorpios.png" />
+    <Content Include="Content\Models\smalllanding.png" />
+    <Content Include="Content\Models\socrates.png" />
+    <Content Include="Content\Models\sokotsu.png" />
+    <Content Include="Content\Models\sovereignicon.png" />
+    <Content Include="Content\Models\sovereignmortar.png" />
+    <Content Include="Content\Models\sovereignturrets.png" />
+    <Content Include="Content\Models\speerwurf.png" />
+    <Content Include="Content\Models\springfield.png" />
+    <Content Include="Content\Models\steele.png" />
+    <Content Include="Content\Models\steward.png" />
+    <Content Include="Content\Models\stingray.png" />
+    <Content Include="Content\Models\stolz.png" />
+    <Content Include="Content\Models\sturmbringer.png" />
+    <Content Include="Content\Models\suvorov.png" />
+    <Content Include="Content\Models\suyetka.png" />
+    <Content Include="Content\Models\swift.png" />
+    <Content Include="Content\Models\swz3palnik.png" />
+    <Content Include="Content\Models\syera1.png" />
+    <Content Include="Content\Models\syera2.png" />
+    <Content Include="Content\Models\syera3.png" />
+    <Content Include="Content\Models\szabla.png" />
+    <Content Include="Content\Models\takaashi1.png" />
+    <Content Include="Content\Models\takaashi2.png" />
+    <Content Include="Content\Models\tambov.png" />
+    <Content Include="Content\Models\tanuki.png" />
+    <Content Include="Content\Models\tarakee.png" />
+    <Content Include="Content\Models\tartarus.png" />
+    <Content Include="Content\Models\tenkei.png" />
+    <Content Include="Content\Models\tennessee.png" />
+    <Content Include="Content\Models\terrier.png" />
+    <Content Include="Content\Models\tetsubo.png" />
+    <Content Include="Content\Models\thales.png" />
+    <Content Include="Content\Models\thunderer.png" />
+    <Content Include="Content\Models\tikhvin.png" />
+    <Content Include="Content\Models\tiksi.png" />
+    <Content Include="Content\Models\toulon.png" />
+    <Content Include="Content\Models\tourbillon.png" />
+    <Content Include="Content\Models\trenton.png" />
+    <Content Include="Content\Models\tribal.png" />
+    <Content Include="Content\Models\triumph.png" />
+    <Content Include="Content\Models\tsukuyomi.png" />
+    <Content Include="Content\Models\tug.png" />
+    <Content Include="Content\Models\tunguska.png" />
+    <Content Include="Content\Models\turtle.png" />
+    <Content Include="Content\Models\tyumen.png" />
+    <Content Include="Content\Models\uccisore.png" />
+    <Content Include="Content\Models\uhlan.png" />
+    <Content Include="Content\Models\uwatsu.png" />
+    <Content Include="Content\Models\valiant.png" />
+    <Content Include="Content\Models\valley.png" />
+    <Content Include="Content\Models\vanguard.png" />
+    <Content Include="Content\Models\vauban.png" />
+    <Content Include="Content\Models\veeran.png" />
+    <Content Include="Content\Models\veliky.png" />
+    <Content Include="Content\Models\vengeance.png" />
+    <Content Include="Content\Models\victoria.png" />
+    <Content Include="Content\Models\vimana.png" />
+    <Content Include="Content\Models\volochok.png" />
+    <Content Include="Content\Models\voltaire.png" />
+    <Content Include="Content\Models\vorkuta.png" />
+    <Content Include="Content\Models\wachter.png" />
+    <Content Include="Content\Models\walze.png" />
+    <Content Include="Content\Models\wanisecretbase.png" />
+    <Content Include="Content\Models\waniterrorship.png" />
+    <Content Include="Content\Models\washington.png" />
+    <Content Include="Content\Models\wodao.png" />
+    <Content Include="Content\Models\wolfe.png" />
+    <Content Include="Content\Models\wz6szpada.png" />
+    <Content Include="Content\Models\xenophon.png" />
+    <Content Include="Content\Models\yorktown.png" />
+    <Content Include="Content\Models\yue.png" />
+    <Content Include="Content\Models\yurgi.png" />
+    <Content Include="Content\Models\zamiec.png" />
+    <Content Include="Content\Models\zarigani.png" />
+    <Content Include="Content\Models\zb2burza.png" />
+    <Content Include="Content\Models\zeno.png" />
+    <Content Include="Content\Models\zerstorer.png" />
+    <Content Include="Content\Models\zhanmadao.png" />
+    <Content Include="Content\Models\zuhaf.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\heroic.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\Inspinia\style.scss" />
+    <Content Include="Content\Inspinia\_badgets_labels.scss" />
+    <Content Include="Content\Inspinia\_base.scss" />
+    <Content Include="Content\Inspinia\_buttons.scss" />
+    <Content Include="Content\Inspinia\_chat.scss" />
+    <Content Include="Content\Inspinia\_elements.scss" />
+    <Content Include="Content\Inspinia\_jquery_steps.scss" />
+    <Content Include="Content\Inspinia\_landing.scss" />
+    <Content Include="Content\Inspinia\_md-skin.scss" />
+    <Content Include="Content\Inspinia\_media.scss" />
+    <Content Include="Content\Inspinia\_metismenu.scss" />
+    <Content Include="Content\Inspinia\_mixins.scss" />
+    <Content Include="Content\Inspinia\_navigation.scss" />
+    <Content Include="Content\Inspinia\_pages.scss" />
+    <Content Include="Content\Inspinia\_rtl.scss" />
+    <Content Include="Content\Inspinia\_sidebar.scss" />
+    <Content Include="Content\Inspinia\_skins.scss" />
+    <Content Include="Content\Inspinia\_spinners.scss" />
+    <Content Include="Content\Inspinia\_theme-config.scss" />
+    <Content Include="Content\Inspinia\_top_navigation.scss" />
+    <Content Include="Content\Inspinia\_typography.scss" />
+    <Content Include="Content\Inspinia\_variables.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Inspinia\_dystopian.scss" />
+    <None Include="Properties\PublishProfiles\DystopianWars - Web Deploy.pubxml" />
+    <None Include="Scripts\Boilerplate\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\Boilerplate\jquery.slimscroll.js" />
+    <Content Include="Scripts\Boilerplate\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\Plugins\metisMenu.min.js" />
+    <Content Include="Scripts\Plugins\skin.config.min.js" />
+    <Content Include="Scripts\inspinia.js" />
+    <Content Include="Scripts\Boilerplate\jquery-3.1.1.js" />
+    <Content Include="Scripts\Boilerplate\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\Boilerplate\jquery-3.1.1.min.map" />
+    <None Include="Scripts\Boilerplate\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Boilerplate\jquery.validate.js" />
+    <Content Include="Scripts\Boilerplate\jquery.validate.min.js" />
+    <Content Include="Scripts\Boilerplate\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Boilerplate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Boilerplate\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\Boilerplate\knockout-3.4.2.js" />
+    <Content Include="Scripts\Boilerplate\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Boilerplate\respond.js" />
+    <Content Include="Scripts\Boilerplate\respond.min.js" />
+    <Content Include="Scripts\Boilerplate\bootstrap.js" />
+    <Content Include="Scripts\Boilerplate\bootstrap.min.js" />
+    <Content Include="Scripts\Plugins\i18n\ar.js" />
+    <Content Include="Scripts\Plugins\i18n\az.js" />
+    <Content Include="Scripts\Plugins\i18n\bg.js" />
+    <Content Include="Scripts\Plugins\i18n\ca.js" />
+    <Content Include="Scripts\Plugins\i18n\cs.js" />
+    <Content Include="Scripts\Plugins\i18n\da.js" />
+    <Content Include="Scripts\Plugins\i18n\de.js" />
+    <Content Include="Scripts\Plugins\i18n\el.js" />
+    <Content Include="Scripts\Plugins\i18n\en.js" />
+    <Content Include="Scripts\Plugins\i18n\es.js" />
+    <Content Include="Scripts\Plugins\i18n\et.js" />
+    <Content Include="Scripts\Plugins\i18n\eu.js" />
+    <Content Include="Scripts\Plugins\i18n\fa.js" />
+    <Content Include="Scripts\Plugins\i18n\fi.js" />
+    <Content Include="Scripts\Plugins\i18n\fr.js" />
+    <Content Include="Scripts\Plugins\i18n\gl.js" />
+    <Content Include="Scripts\Plugins\i18n\he.js" />
+    <Content Include="Scripts\Plugins\i18n\hi.js" />
+    <Content Include="Scripts\Plugins\i18n\hr.js" />
+    <Content Include="Scripts\Plugins\i18n\hu.js" />
+    <Content Include="Scripts\Plugins\i18n\id.js" />
+    <Content Include="Scripts\Plugins\i18n\is.js" />
+    <Content Include="Scripts\Plugins\i18n\it.js" />
+    <Content Include="Scripts\Plugins\i18n\ja.js" />
+    <Content Include="Scripts\Plugins\i18n\km.js" />
+    <Content Include="Scripts\Plugins\i18n\ko.js" />
+    <Content Include="Scripts\Plugins\i18n\lt.js" />
+    <Content Include="Scripts\Plugins\i18n\lv.js" />
+    <Content Include="Scripts\Plugins\i18n\mk.js" />
+    <Content Include="Scripts\Plugins\i18n\ms.js" />
+    <Content Include="Scripts\Plugins\i18n\nb.js" />
+    <Content Include="Scripts\Plugins\i18n\nl.js" />
+    <Content Include="Scripts\Plugins\i18n\pl.js" />
+    <Content Include="Scripts\Plugins\i18n\pt-BR.js" />
+    <Content Include="Scripts\Plugins\i18n\pt.js" />
+    <Content Include="Scripts\Plugins\i18n\ro.js" />
+    <Content Include="Scripts\Plugins\i18n\ru.js" />
+    <Content Include="Scripts\Plugins\i18n\sk.js" />
+    <Content Include="Scripts\Plugins\i18n\sr-Cyrl.js" />
+    <Content Include="Scripts\Plugins\i18n\sr.js" />
+    <Content Include="Scripts\Plugins\i18n\sv.js" />
+    <Content Include="Scripts\Plugins\i18n\th.js" />
+    <Content Include="Scripts\Plugins\i18n\tr.js" />
+    <Content Include="Scripts\Plugins\i18n\uk.js" />
+    <Content Include="Scripts\Plugins\i18n\vi.js" />
+    <Content Include="Scripts\Plugins\i18n\zh-CN.js" />
+    <Content Include="Scripts\Plugins\i18n\zh-TW.js" />
+    <Content Include="Scripts\Boilerplate\typings\knockout\knockout-select2.js" />
+    <Content Include="Scripts\Boilerplate\typings\knockout\knockout-select2.min.js" />
+    <Content Include="Scripts\Plugins\select2.js" />
+    <Content Include="Scripts\Plugins\select2.min.js" />
+    <Content Include="Scripts\Plugins\metisMenu.js" />
+    <Content Include="Scripts\Boilerplate\Plugins\metisMenu.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\_shipOptions.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\fleetbuilder.ts" />
+    <TypeScriptCompile Include="Scripts\Boilerplate\typings\knockout.mapping\knockout.mapping.d.ts" />
+    <TypeScriptCompile Include="Scripts\Boilerplate\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\Boilerplate\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3701</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dystopian.local/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.2.4.1\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

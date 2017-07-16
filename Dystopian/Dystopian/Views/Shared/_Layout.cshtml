@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/boilerplate")
+    @Styles.Render("~/Content/site")
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+  
+</head>
+<body data-root="@Html.Raw(Href("~/"))"class="siteContainer" >   
+    <div >
+        @RenderBody()
+    </div> 
+   
+    @Scripts.Render("~/bundles/boilerplate")
+    @Scripts.Render("~/bundles/plugins")
+    @Scripts.Render("~/bundles/inspinia")
+  
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Azure";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/fleetbuilder")
+}
+
+<div class="dystopian-sidebar">
+    <h1 data-toggle="collapse" data-target="#factionOptions" style="text-align:center; color: white"><span class="fa fa-cogs"></span>GAME SETTINGS</h1>
+    <div class="collapse" id="factionOptions">
+        <br />
+        <div class="col-sm-12">
+            <select id="faction" class="form-control select2" data-tags="true" data-placeholder="Select faction"
+                    data-bind="selectedOptions: SelectedFaction" style="width:100%;">
+                <option></option>
+                <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
+                <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
+                <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
+            </select>
+        </div>
+    </div>
+
+    <table class="table table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Points</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: AvailableModels">
+            <tr>
+                <td data-bind="text: Name"></td>
+                <td data-bind="text: BasePoints"></td>
+                <td><button type="button" class="btn btn-xs btn-primary" title="Add" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="dystopian-container">
+    <div class="row">
+
+        <div class="col-md-6 ibax">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Model</th>
+                        <th class="col-md-1">Size</th>
+                        <th class="col-md-1">Points</th>
+                        <th class="col-md-1">Squadron</th>
+                        <th class="col-md-6">Options</th>
+                        <th class="col-md-1"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: FleetList">
+                    <tr style="height: 60px">
+                        <td data-bind="text: Name"></td>
+                        <td>(<span data-bind="text: Size()"></span>)</td>
+                        <td data-bind="text: CurrentPoints"></td>
+                        <td>
+                            <div class="btn-group" role="group" data-bind="visible: Size() != 'L'">
+                                <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.decreaseSquadronSize }"><span class="fa fa-chevron-left"></span></button>
+                                <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.increaseSquadronSize }"><span class="fa fa-chevron-right"></span></button>
+                            </div>
+                        </td>
+                        <td align="left" class="squadronInfo">
+                            <!-- ko foreach: Ships -->
+                            <img style="opacity:0.3" title="Options.." data-title="Options..." data-bind="attr: { src: $parent.Url(), class: 'size_' + Size()}, css: { 'ImageActive hvr-pulse-grow' : Active()}, event: { click: $root.showOptions }" />
+
+                            <!-- /ko -->
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-xs btn-primary" title="Remove" data-bind="event: { click: $parent.removeFromSelectedItems }"><span class="fa fa-close"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2 ibax summary" style="text-align:center">
+            <div class="well" style="margin-top:15px;">
+                <p><span data-bind="text: TotalPoints"></span><span> / 1000</span></p>
+                <p>FLEET VALUE</p>
+            </div>
+            <div class="well">
+                <p><span data-bind="text: PercentageLarge"></span><span>%</span></p>
+                <p>LARGE</p>
+            </div>
+            <div class="well">
+                <p><span data-bind="text: PercentageMedium"></span><span>%</span></p>
+                <p>MEDIUM</p>
+            </div>
+            <div class="well">
+                <p><span data-bind="text: PercentageSmall"></span><span>%</span></p>
+                <p>SMALL</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ko if: $root.CurrentShip().Name != null -->
+@Html.Partial("_shipOptions", false)
+<!-- /ko -->

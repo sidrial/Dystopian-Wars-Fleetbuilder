@@ -1,0 +1,670 @@
+/// <reference path="_variables.scss" />
+@import '_variables.scss';
+@import '_buckaroo_inspinia.scss';
+@import 'areas/transaction/_batch.scss';
+@import 'areas/transaction/_transactions.scss';
+@import 'areas/configuration/_merchants.scss';
+@import '_wizardbreadcrumbs.scss';
+@import 'areas/services/_antifraud.scss';
+@import 'areas/services/_template_editor.scss';
+@import 'areas/_feedback.scss';
+@import 'areas/_fonts.scss';
+@import 'areas/invoicecm3/_invoicecm3.scss';
+@import 'areas/services/_template_editor.scss';
+@import 'areas/login/_login.scss';
+@import "areas/financial/_paymentanalyzer.scss";
+@import "areas/merchant/_settings.scss";
+@import "areas/merchant/_billing.scss";
+@import 'areas/dashboard/_dashboard.scss';
+@import 'areas/report/_invoice.scss';
+@import 'areas/subscriptions/products/_add_product.scss';
+@import 'areas/approvals/_approvals.scss';
+@import 'areas/subscriptions/configurations/_configurations.scss';
+@import 'areas/_notifications.scss';
+
+.break-word {
+    word-wrap: break-word;
+}
+
+// nav
+.navbar.navbar-static-top {
+    margin-bottom: 0;
+}
+
+.navbar-default .nav > li.logo-element {
+    /*background-color: white;*/
+    padding: 2px 0 3px;
+}
+
+.navbar-default .nav > li.no-hover > a:hover,
+.navbar-default .nav > li.no-hover > a:active {
+    background: inherit;
+}
+
+
+.progress-bar-gray {
+    background-color: $dark-gray;
+}
+
+tr[data-uid] {
+    cursor: pointer;
+}
+
+.table-oneline th,
+.table-oneline td {
+    max-width: 200px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &.allow-overflow {
+        overflow: visible;
+        max-width: 300px;
+        white-space: normal;
+    }
+}
+
+.half-height {
+    height: 50%;
+    position: relative;
+}
+
+*[class*='col-fixed-'] {
+    -webkit-transition: opacity .5s ease-in-out, width .3s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out, width .3s ease-in-out;
+    transition: opacity .5s ease-in-out, width .3s ease-in-out;
+
+    > div {
+        width: 270px;
+    }
+}
+
+*[class*='col-offset-'] {
+    -webkit-transition: padding-right .3s ease-in-out;
+    -moz-transition: padding-right .3s ease-in-out;
+    transition: padding-right .3s ease-in-out;
+}
+
+.col-fixed-300 {
+    position: absolute;
+    width: 500px;
+    padding: 0 15px;
+    z-index: 101;
+    right: 0;
+    opacity: 1;
+}
+
+.col-fixed-0 {
+    position: absolute;
+    width: 0;
+    padding: 0 15px;
+    z-index: 101;
+    right: 0;
+    opacity: 0;
+}
+
+.col-offset-300 {
+    padding-right: 315px;
+}
+
+.col-offset-0 {
+    padding-right: 15px;
+}
+
+// add table-borderless style
+.table-borderless > thead > tr > th,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > tbody > tr > td,
+.table-borderless > tfoot > tr > td {
+    border-top: 0;
+}
+
+
+// add table no margin style
+.table-no-margin {
+    margin-bottom: 0;
+}
+
+// add table condesed styles
+.table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+    padding: 5px;
+}
+
+// add table minimi styles
+.table-minimized > tbody > tr > td, .table-minimized > tbody > tr > th, .table-minimized > tfoot > tr > td, .table-minimized > tfoot > tr > th, .table-minimized > thead > tr > td, .table-minimized > thead > tr > th {
+    padding: 2px;
+    vertical-align: middle;
+}
+
+// Inspinia does not use round borders; this bootstrap element was forgotten somehow
+.input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn {
+    border-radius: 0;
+}
+
+// fix for select2 styling inside a modal
+.select2-container {
+    z-index: 2051;
+}
+
+// fix for select2 styling inside a modal
+.bootstrap-datetimepicker-widget {
+    z-index: 2052;
+}
+
+// pagination
+.pagination {
+    margin: 0;
+}
+
+// onoffswitch fix
+.onoffswitch-label,
+.onoffswitch-switch {
+    border-color: $navy;
+}
+
+.onoffswitch-inner:before {
+    background-color: $navy;
+}
+
+// icon colors
+.buck-green {
+    color: forestgreen;
+}
+
+.buck-yellow {
+    color: #D29500;
+}
+
+.buck-orange {
+    color: #BF5208;
+}
+
+.buck-blue {
+    color: #2E6CA4;
+}
+
+.buck-red {
+    color: #d51313;
+
+    &:hover {
+        color: #d51313;
+    }
+}
+
+.buck-navy {
+    color: $navy;
+}
+
+.buck-bluish-gray {
+    color: $buck-bluish-gray;
+}
+
+.tooltipped {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+.tooltip-inner {
+   max-width: 300px;
+}
+
+.form-group .control-label.text-left {
+    text-align: left;
+}
+
+.form-group .control-label.text-right {
+    text-align: right;
+}
+
+
+.form-header {
+    font-size: 1.1em;
+    font-weight: 100;
+    margin: 0 0 10px -10px;
+}
+
+// fix inspinia dropdown-menu-right override
+.dropdown-menu.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.dropup {
+    float: left;
+}
+
+.table-responsive.overflow-visible {
+    overflow: visible;
+}
+
+
+// dropzone.js custom placeholder styling
+.dropzone.dz-started .dz-message.custom {
+    display: none;
+}
+
+.dz-message.custom {
+    font-size: 1.8em;
+    text-align: center;
+    position: relative;
+    margin-top: 130px;
+}
+
+/* To show only AFTER ajax/knockout completes */
+.startHidden {
+    visibility: hidden;
+}
+
+/* Hide text overflow */
+.hideOverflow {
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+/* A select dropdown with a button directly attached to it */
+.selectWithAttachedButton {
+    width: auto;
+}
+
+/* A button directly attached to a select dropdown */
+.selectAttachedButton {
+    margin-left: -1px;
+    color: black;
+    background-color: white;
+    border-color: #E5E6E7;
+    border-radius: 0px;
+}
+
+/* A dotted underline, indicating that there is a tooltip */
+.tooltipped {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+/* Some distance for stacked pull-right */
+.stackedRight {
+    margin-left: .5em;
+}
+
+/* Inline block */
+.inline-block {
+    display: inline-block;
+}
+
+/* Display: table */
+.table {
+    display: table;
+}
+
+/* Display: table-cell */
+.table-cell {
+    display: table-cell;
+}
+
+/* Invisible text, to allow page searching
+.invisibleSearchableText {
+    z-index: -9999;
+    opacity: 0;
+    color: white;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+*/
+
+/* Centered text */
+.align-center {
+    text-align: center;
+}
+
+/* Left-aligned text */
+.align-left {
+    text-align: left;
+}
+
+/* Right-aligned text */
+.align-right {
+    text-align: right;
+}
+
+/* Font-weight normal, to deviate while inside a strong element */
+.font-weight-normal {
+    font-weight: normal;
+}
+
+/* Large font */
+.large {
+    font-size: large;
+}
+
+/* Smaller font */
+.smaller {
+    font-size: smaller;
+}
+
+/* X-small font */
+.xSmall {
+    font-size: x-small;
+}
+
+/* Xx-small font */
+.xxSmall {
+    font-size: xx-small;
+}
+
+/* Gray text color */
+.gray {
+    color: GrayText;
+}
+
+/* Gives a textfield an immutable, 'normal-text' look. Allows smooth switching between view and edit modes, by always using a textfield. */
+.immutableInput {
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    -box-shadow: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+/* Full width for a modal */
+.fullWidthModal {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/* Full height for a modal */
+.fullHeightModal {
+    position: absolute;
+    top: 3%;
+    bottom: 3%;
+    height: 93.5%; /* 96% gives a minor scrollbar - the shorter the window, the more likely it appears */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* Push the default modal down a bit to allow notification messages to become visible */
+.modal.in .modal-dialog {
+    margin-top: 60px;
+}
+
+/* A checkbox centered in a table cell */
+td input.centeredCheckbox {
+    left: 50%;
+    margin-left: -6px !important;
+}
+
+/* A Bootstrap checkbox centered in a table cell */
+td label.centeredCheckbox {
+    left: 50%;
+}
+
+/* No mouse interaction */
+.no-pointer-events {
+    pointer-events: none;
+}
+
+/* A table cell that holds an right-aligned amount */
+th.amount,
+td.amount {
+    text-align: right;
+}
+
+/* A table cell made as small as possible while still fitting its contents */
+th.sizeToFitCell {
+    width: 1px;
+}
+
+/* An accordion heading that is clickable everywhere and shows this through the cursor */
+.panel-accordion .panel-heading {
+    cursor: pointer;
+}
+
+/* A heading above a percent-height body, without enlarging the container */
+.percent-height-heading {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Relative positioning, to allow children to determine their position and size based on this element */
+.relative {
+    position: relative;
+}
+
+/* Absolute positioning */
+.absolute {
+    position: absolute;
+}
+
+/* Shows a pointer (hand) cursor */
+.pointer {
+    cursor: pointer;
+}
+
+/* Inherits ancestor's cursor */
+.cursor-inherit {
+    cursor: inherit;
+}
+
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-1em {
+    padding-top: 1em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-2em {
+    padding-top: 2em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-4em {
+    padding-top: 4em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-5em {
+    padding-top: 5em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-6em {
+    padding-top: 6em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-7em {
+    padding-top: 7em;
+}
+/* A percent-height item that permits an X-em heading above itself */
+.percent-height-body-9em {
+    padding-top: 9em;
+}
+/* A percent-height item that permits an modal header above itself */
+.percent-height-body-modal-header {
+    padding-top: 81px;
+}
+
+.alert.alert-sm {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.button-separator {
+    height: 15px;
+    margin-top: 10px;
+    border-right: 3px dotted #BBB;
+    padding-left: 1px; /* Compensate for right-aligned border */
+}
+
+// Bootstrap v4 alpha / custom table settings
+.thead-default {
+    th {
+        color: #55595c;
+        background-color: #DDDDDD;
+    }
+}
+
+.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border: none;
+}
+
+// Fixed height
+.col-fixed-319 {
+    height: 319px;
+    z-index: 101;
+    overflow-y: auto;
+}
+
+/* Always 1 A4 wide */
+.a4-width {
+    width: 210mm;
+    min-width: 210mm;
+    max-width: 210mm;
+}
+
+/* Always 1 A4 + scrollbar wide */
+.a4-width-and-scrollbar {
+    width: 215mm;
+    min-width: 215mm;
+    max-width: 215mm;
+}
+
+.nudge-up-down-container {
+    vertical-align: middle;
+    padding: 0 .5em 0 .5em;
+}
+
+.nudge-up,
+.nudge-down {
+    display: block;
+    cursor: pointer;
+}
+
+.nudge-up:hover,
+.nudge-down:hover {
+    color: darkgray;
+}
+
+.nudge-up:active,
+.nudge-down:active {
+    color: #D29500; /* buck-yellow */
+}
+
+.graphBar {
+    background-color: #B0BAC0;
+}
+
+.graphBarCell {
+    vertical-align: bottom !important;
+}
+
+// fancy tabs
+.bucktabs-wrapper {
+    margin-top: -5px;
+
+    .bucktab {
+        background: $buck-pale-gray;
+        margin-top: 10px;
+        
+        h3 {
+            padding: 15px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .btn {
+            margin: 9px 9px 0 0;
+
+            &.btn-cancel {
+                text-decoration: underline;
+                color: #aaa;
+            }
+        }
+
+        &.active {
+            overflow: visible;
+
+            .bucktab-content {
+                opacity: 1;
+                max-height: 650px;
+                overflow-y: visible;
+            }
+        }
+
+        .bucktab-content {
+            max-height: 0;
+            border: 1px solid $buck-pale-gray;
+            margin: 0;
+            background: #fff;
+            opacity: 0;
+            -webkit-transition: opacity .4s ease, max-height .4s ease;
+            transition: opacity .4s ease, max-height .4s ease;
+            overflow-y: hidden;
+
+            &.active {
+                opacity: 1;
+                max-height: 1200px;
+
+                &.no-animation {
+                    max-height: none;
+                }
+            }
+
+            > div {
+                padding: 15px;
+            }
+        }
+    }
+}
+// END fancy tabs
+
+// ibox partials for forms
+
+.ibox-content {
+    .ibox-partial {
+        background-color: white;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid none none none;
+        border-width: 1px;
+
+        h5 {
+            font-size: 14px;
+        }
+    }
+
+    .ibox-partial-border {
+        border-left: 1px solid #e7eaec;
+        background-color: white;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid none none solid;
+        border-width: 1px;
+
+        h5 {
+            font-size: 14px;
+        }
+    }
+}
+
+// timeline center fix
+@media only screen and (min-width: 1170px) {
+    .center-orientation .vertical-timeline-block {
+        margin: 2em 0;
+
+        p {
+            word-wrap: break-word;
+        }
+    }
+}

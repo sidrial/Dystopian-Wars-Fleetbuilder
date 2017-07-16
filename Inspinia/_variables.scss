@@ -1,0 +1,59 @@
+// Font
+$font-stack: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Buckaroo design guide colors
+    // primary button
+$buck-dirty-yellow: #D5D110;    
+$buck-dirty-yellow-hover: #E0DC10;    
+$buck-dirty-yellow-press: #C8C410;    
+
+    // secondary button
+$buck-more-gray: #B0BAC0;       
+$buck-more-gray-hover: #C4CFD6;      
+$buck-more-gray-press: #9DA7AE; 
+
+    // other
+$buck-grayish-blue: #49494E;    
+$buck-bluish-gray: #585960;    
+$buck-gray: #E6EBEC;            
+$buck-pale-gray: #F0F4F6;       
+
+
+// Old basic colors
+$navy: $buck-dirty-yellow;                     // Primary color, dirty-yellow
+$dark-gray: $buck-more-gray;     // Default color
+$blue: rgb(28, 132, 198);           // Success color
+$lazur: rgb(35, 198, 200);          // Info color
+$yellow: rgb(248, 172, 89);         // Warrning color
+$red: rgb(237, 85, 101);            // Danger color
+
+// Various colors
+$text-color: $buck-bluish-gray; //#676a6c;           // Body text
+$gray: #f3f3f4;                 // Background wrapper color
+$light-gray: #d1dade;           // Default label, badget
+$label-badget-color: #5e5e5e;
+$light-blue: #f3f6fb;
+
+// Spiner color and margin
+$spin-color: $navy;
+$spin-margin: 0 auto;  
+
+// IBOX colors ( default panel colors)
+$border-color: #e7eaec;   // IBox border
+$ibox-title-bg: white;    // IBox Background header
+$ibox-content-bg: white;  // IBox Background content
+
+//Sidebar width
+$sidebar-width: 237px;
+
+// Boxed layout width
+$boxed-width: 1200px;
+$boxed-backgound: image-url("patterns/shattered.png");
+
+//Border radius for buttons
+$btn-border-radius: 3px;
+
+//Navigation
+$nav-bg: $buck-bluish-gray; //#2f4050;
+$nav-profil-pattern: none; //image-url("patterns/header-profile.png") no-repeat;
+$nav-text-color: #cbced3;

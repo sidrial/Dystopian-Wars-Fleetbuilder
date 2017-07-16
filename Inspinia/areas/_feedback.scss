@@ -1,0 +1,83 @@
+﻿/// <reference path="../_variables.scss" />
+
+// sidebar
+.navbar-default.navbar-static-side {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+// hide feedback on collapsed sidebar
+.mini-navbar #feedback {
+    display: none;
+}
+
+#feedback {
+    position: absolute;
+    bottom: 0;    
+    max-height: 49px;
+    border-top: 1px solid #444;
+    width: 100%;
+    padding: 0 20px;
+    background:  $buck-grayish-blue;
+    -moz-transition: max-height .4s ease;
+    -o-transition: max-height .4s ease;
+    -webkit-transition: max-height .4s ease;
+    transition: max-height .4s ease;
+
+    &.open {
+        max-height: 400px;
+    }
+
+    .title {
+        color: #fff;
+        display: block;
+        line-height: 49px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .mood {
+        border-top: 1px solid #fff;
+        padding-top: 15px;
+        text-align: center;
+
+        .fa {
+            margin: 0 3px;
+            padding: 0 0 3px;
+            color: #888;
+            font-size: 3em;
+            font-weight: lighter;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .8;
+            }
+
+            &.active {
+                opacity: 1;
+                border-bottom: 2px solid #444;
+            }
+
+            &.fa-smile-o.active {                
+                color: $navy;
+            }
+
+            &.fa-meh-o.active {                
+                color: $yellow;
+            }
+
+            &.fa-frown-o.active {                
+                color: $red;
+            }
+        }
+    }
+
+    .type {
+        margin: 10px 0;
+    }
+
+    .send-feedback {
+        margin: 10px 0 20px;
+        width: 100%;
+    }
+}
