@@ -629,7 +629,6 @@
     <Content Include="Scripts\Boilerplate\typings\knockout\knockout-select2.min.js" />
     <Content Include="Scripts\Plugins\select2.js" />
     <Content Include="Scripts\Plugins\select2.min.js" />
-    <Content Include="Scripts\Boilerplate\Plugins\metisMenu.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
