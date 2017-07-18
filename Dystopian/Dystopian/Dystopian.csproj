@@ -525,6 +525,12 @@
     <Content Include="Content\Models\zerstorer.png" />
     <Content Include="Content\Models\zhanmadao.png" />
     <Content Include="Content\Models\zuhaf.png" />
+    <Content Include="Content\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -551,6 +557,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\style.scss" />
     <None Include="Properties\PublishProfiles\DystopianWars - Web Deploy.pubxml" />
     <None Include="Scripts\Boilerplate\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Boilerplate\jquery.slimscroll.js" />
