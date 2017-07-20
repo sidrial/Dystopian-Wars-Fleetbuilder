@@ -15,7 +15,7 @@ namespace DataAccess
         public DbSet<Squadron> Squadrons { get; set; }
         public DbSet<SquadronEntry> SquadronEntries { get; set; }
 
-        public DystopianRepository(): base()
+        public DystopianRepository(): base("DystopianWarsDatabase")
         {
             
         }
