@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Dystopian.Models;
+using DataAccess;
+using DataAccess.Entities;
+using Microsoft.SqlServer.Server;
+using Option = Dystopian.Models.Option;
+using Ship = Dystopian.Models.Ship;
 
 namespace Dystopian.Controllers
 {
@@ -17,6 +21,12 @@ namespace Dystopian.Controllers
         [HttpGet]
         public ActionResult GetFactionModels(Enums.Faction faction)
         {
+            //example usage
+            var db = new DystopianRepository();
+            var coaFleet = db.Squadrons.Where(s => s.FactionID == Faction.COA).ToList();
+            var kobFleet = db.Squadrons.Where(s => s.FactionID == Faction.KOB).ToList();
+            var allLargeAndMassives = db.Ships.Where(s => s.Size == "L").ToList();
+
             switch (faction)
             {
                 case Enums.Faction.COA:
