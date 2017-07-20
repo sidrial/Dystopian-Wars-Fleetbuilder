@@ -8,17 +8,43 @@
     @Styles.Render("~/Content/site")
 
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-  
+
 </head>
-<body data-root="@Html.Raw(Href("~/"))"class="siteContainer" >   
-    <div >
+<body data-root="@Html.Raw(Href("~/"))" class="dystopianSiteContainer">
+    <nav class="navbar navbar-inverse navbar-dystopian navbar-static-top example-8">
+        <div class="container">         
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">FACTION</a><span>CoA</span></li>
+                    <li><a href="#">FLEET VALUE</a><span>1000</span></li>
+                </ul>           
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar8">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<img class="dystopian-logo" src="~/Content/220df6e3419502c8d8ed30381a633de1_original.png" />*@
+            </div>
+            <div id="navbar8" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">CORE</a><span>NAVAL</span></li>
+                    <li><a href="#">LIST RULES</a><span>COMPETITVE</span></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    <div class="container body-content">
         @RenderBody()
-    </div> 
-   
+    </div>
+
+
     @Scripts.Render("~/bundles/boilerplate")
     @Scripts.Render("~/bundles/plugins")
     @Scripts.Render("~/bundles/inspinia")
-  
+
 
     @RenderSection("scripts", required: false)
 </body>
