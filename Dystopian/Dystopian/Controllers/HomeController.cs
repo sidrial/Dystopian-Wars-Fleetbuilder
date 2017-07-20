@@ -22,10 +22,10 @@ namespace Dystopian.Controllers
         public ActionResult GetFactionModels(Enums.Faction faction)
         {
             //example usage
-            var db = new DystopianRepository();
-            var coaFleet = db.Squadrons.Where(s => s.FactionID == Faction.COA).ToList();
-            var kobFleet = db.Squadrons.Where(s => s.FactionID == Faction.KOB).ToList();
-            var allLargeAndMassives = db.Ships.Where(s => s.Size == "L").ToList();
+            //var db = new DystopianRepository();
+            //var coaFleet = db.Squadrons.Where(s => s.FactionID == Faction.COA).ToList();
+            //var kobFleet = db.Squadrons.Where(s => s.FactionID == Faction.KOB).ToList();
+            //var allLargeAndMassives = db.Ships.Where(s => s.Size == "L").ToList();
 
             switch (faction)
             {

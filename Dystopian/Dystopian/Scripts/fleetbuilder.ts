@@ -1,5 +1,7 @@
 ﻿class FleetViewModel {
     SelectedFaction = ko.observable<string>("");
+    SelectedCore = ko.observable<string>("");
+    SelectedRules = ko.observable<string>("");
     AvailableModels = ko.observableArray<Ship>();
     FleetList = ko.observableArray<Squadron>();
     TotalPoints = ko.computed(function () {       
@@ -98,16 +100,38 @@
 }
 
 $(document).ready(() => {
-    $(".select2").select2({
-        allowClear: true
-    });
     var observe = ko.observable(new FleetViewModel());
     ko.applyBindings(observe);  
 
-    $(".select2").select2({
-        allowClear: true
-    });
+    $("#faction").select2({
+        templateResult: formatFaction,
+        templateSelection: formatFaction
+    });  
 
+    $("#core").select2({
+        templateResult: formatCore,
+        templateSelection: formatCore
+    });  
+    $("#rules").select2({
+    });  
+
+    function formatFaction(faction) {
+        if (!faction.id) { return faction.text; }
+        var $faction = $(
+            '<span><img src="Content/Flags/' + faction.element.value.toLowerCase() + '.jpg" class="img-flag" /> ' + faction.text + '</span>'
+        );
+        return $faction;
+    };
+
+    function formatCore(core) {
+        if (!core.id) { return core.text; }
+        var $core = $(
+            '<span><img src="Content/Core/' + core.element.value.toLowerCase() + '.png" class="img-core" /> ' + core.text + '</span>'
+        );
+        return $core;
+    };
+
+   
     return observe;
 });
 
@@ -216,5 +240,29 @@ class MAROption {
         this.Value = ko.observable(option.Value);
         this.Points = ko.observable(option.Points);
         this.OptionGroup = ko.observable(option.OptionGroup);
+    }
+}
+
+ko.bindingHandlers.bsChecked = {
+    init: function (element, valueAccessor, allBindingsAccessor,
+        viewModel, bindingContext) {
+        var value = valueAccessor();
+        var newValueAccessor = function () {
+            return {
+                change: function () {
+                    value(element.value);
+                }
+            }
+        };
+        ko.bindingHandlers.event.init(element, newValueAccessor,
+            allBindingsAccessor, viewModel, bindingContext);
+    },
+    update: function (element, valueAccessor, allBindingsAccessor,
+        viewModel, bindingContext) {
+        if ($(element).val() == ko.unwrap(valueAccessor())) {
+            setTimeout(function () {
+                $(element).closest('.btn').button('toggle');
+            }, 1);
+        }
     }
 }

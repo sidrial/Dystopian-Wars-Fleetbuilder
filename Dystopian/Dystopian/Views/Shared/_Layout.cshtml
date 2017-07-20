@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+   
     @Styles.Render("~/Content/boilerplate")
     @Styles.Render("~/Content/site")
 
@@ -12,11 +13,23 @@
 </head>
 <body data-root="@Html.Raw(Href("~/"))" class="dystopianSiteContainer">
     <nav class="navbar navbar-inverse navbar-dystopian navbar-static-top example-8">
-        <div class="container">         
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#">FACTION</a><span>CoA</span></li>
-                    <li><a href="#">FLEET VALUE</a><span>1000</span></li>
-                </ul>           
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a></a><span class="dystopianLabel">FACTION</span>
+                    <select id="faction" class="form-control select2" data-placeholder="Select faction"
+                            data-bind="selectedOptions: SelectedFaction" style="width:12em;">
+                        <option></option>
+                        <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
+                        <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
+                        <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
+                    </select>
+                </li>
+                <li>
+                    <a></a><span class="dystopianLabel">FLEET VALUE</span>
+                    <input type="number" data-bind="value: CappedPoints" style="border-radius: 5px; height: 70%; padding-left: 5px; width: 3em" />
+                </li>
+            </ul>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar8">
                     <span class="sr-only">Toggle navigation</span>
@@ -24,19 +37,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @*<img class="dystopian-logo" src="~/Content/220df6e3419502c8d8ed30381a633de1_original.png" />*@
+                <img class="dystopian-logo" src="~/Content/220df6e3419502c8d8ed30381a633de1_original.png" />
             </div>
             <div id="navbar8" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">CORE</a><span>NAVAL</span></li>
-                    <li><a href="#">LIST RULES</a><span>COMPETITVE</span></li>
+                    <li>
+                        <a></a><span class="dystopianLabel">CORE</span>
+                        <select id="core" class="form-control select2" data-placeholder="Select core"
+                                data-bind="selectedOptions: SelectedCore" style="width:7em;">
+                            <option></option>
+                            <option value="@Dystopian.Enums.Core.NAVAL">@Dystopian.Enums.Core.NAVAL.GetDescription()</option>
+                            <option value="@Dystopian.Enums.Core.AERIAL">@Dystopian.Enums.Core.AERIAL.GetDescription()</option>
+                            <option value="@Dystopian.Enums.Core.ARMOURED">@Dystopian.Enums.Core.ARMOURED.GetDescription()</option>
+                        </select>
+                    </li>
+                    <li>
+                        <a></a><span class="dystopianLabel">LIST RULES</span>
+                        <select id="rules" class="form-control select2" data-placeholder="Select rules"
+                                data-bind="selectedOptions: SelectedRules" style="width:5em;">
+                            <option></option>
+                            <option value="NONE">NONE</option>
+                            <option value="COMPETITIVE">COMPETITIVE</option>
+                         
+                        </select>
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
         </div>
         <!--/.container-fluid -->
     </nav>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
     </div>
 

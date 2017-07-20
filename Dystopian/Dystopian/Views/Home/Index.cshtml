@@ -8,9 +8,9 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-3" id="dystopianMenu">
+        <div class="col-sm-12 col-md-2" id="dystopianMenu">
            
-            <div class="panel-group panel-dystopian" id="accordion">
+            @*<div class="panel-group panel-dystopian" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -62,29 +62,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
           
-
-
-            @*<div id="menu1_settings">
-                <h1 data-toggle="collapse" data-target="#factionOptions" style="text-align:center; color: white"><span class="fa fa-cogs"></span>GAME SETTINGS</h1>
-                <div class="collapse" id="factionOptions">
-                    <br />
-                    <div class="col-sm-12">
-                        <select id="faction" class="form-control select2" data-tags="true" data-placeholder="Select faction"
-                                data-bind="selectedOptions: SelectedFaction" style="width:100%;">
-                            <option></option>
-                            <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
-                            <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
-                            <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
-                        </select>
-                    </div>
-                    <br />
-                </div>
-            </div>
-         
-           
-            <div id="menu2_modelselector">
+            <div>
                 <!-- ko if: AvailableModels().length > 0 -->
                 <table class="table table">
                     <thead>
@@ -105,24 +85,8 @@
                 <!-- /ko -->
             </div>
 
-            <div id="menu3_settings">
-                <h1 data-toggle="collapse" data-target="#faction1Options" style="text-align:center; color: white"><span class="fa fa-cogs"></span> ALLIED NATIONS</h1>
-                <div class="collapse" id="faction1Options">
-                    <br />
-                    <div class="col-sm-12">
-                        <select id="faction" class="form-control select2" data-tags="true" data-placeholder="Select faction"
-                                data-bind="selectedOptions: SelectedFaction" style="width:100%;">
-                            <option></option>
-                            <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
-                            <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
-                            <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
-                        </select>
-                    </div>
-                    <br />
-                </div>
-            </div>*@
         </div>
-        <div class="col-sm-12 col-md-7" id="dystopian-body">
+        <div class="col-sm-12 col-md-8" id="dystopianBody">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -158,9 +122,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-12 col-md-2" id="dystopian-summary" style="text-align:center">
+        <div class="col-sm-12 col-md-1" id="dystopianSummary" style="text-align:center">
             <div class="well" style="margin-top:15px;">
-                <p><span data-bind="text: TotalPoints"></span><span> / 1000</span></p>
+                <p><span data-bind="text: TotalPoints"></span> / <span data-bind="text: CappedPoints"></span></p>
                 <p>FLEET VALUE</p>
             </div>
             <div class="well">
