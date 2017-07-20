@@ -6,43 +6,87 @@
     @Scripts.Render("~/bundles/fleetbuilder")
 }
 
-<div class="dystopian-sidebar">
-    <h1 data-toggle="collapse" data-target="#factionOptions" style="text-align:center; color: white"><span class="fa fa-cogs"></span>GAME SETTINGS</h1>
-    <div class="collapse" id="factionOptions">
-        <br />
-        <div class="col-sm-12">
-            <select id="faction" class="form-control select2" data-tags="true" data-placeholder="Select faction"
-                    data-bind="selectedOptions: SelectedFaction" style="width:100%;">
-                <option></option>
-                <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
-                <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
-                <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
-            </select>
-        </div>
-    </div>
-
-    <table class="table table">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Points</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: AvailableModels">
-            <tr>
-                <td data-bind="text: Name"></td>
-                <td data-bind="text: BasePoints"></td>
-                <td><button type="button" class="btn btn-xs btn-primary" title="Add" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="dystopian-container">
+<div class="container-fluid">
     <div class="row">
+        <div class="col-sm-12 col-md-2" id="dystopianMenu">
+           
+            @*<div class="panel-group panel-dystopian" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                Collapsible Group 1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                Collapsible Group 2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                Collapsible Group 3
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+          
+            <div>
+                <!-- ko if: AvailableModels().length > 0 -->
+                <table class="table table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Points</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: AvailableModels">
+                        <tr>
+                            <td data-bind="text: Name"></td>
+                            <td data-bind="text: BasePoints"></td>
+                            <td><button type="button" class="btn btn-xs btn-primary" title="Add" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /ko -->
+            </div>
 
-        <div class="col-md-6 ibax">
+        </div>
+        <div class="col-sm-12 col-md-8" id="dystopianBody">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -78,9 +122,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-2 ibax summary" style="text-align:center">
+        <div class="col-sm-12 col-md-1" id="dystopianSummary" style="text-align:center">
             <div class="well" style="margin-top:15px;">
-                <p><span data-bind="text: TotalPoints"></span><span> / 1000</span></p>
+                <p><span data-bind="text: TotalPoints"></span> / <span data-bind="text: CappedPoints"></span></p>
                 <p>FLEET VALUE</p>
             </div>
             <div class="well">

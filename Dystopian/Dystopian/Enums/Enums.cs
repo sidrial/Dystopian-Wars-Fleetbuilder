@@ -27,8 +27,18 @@ namespace Dystopian
             PE = 7
         }
 
+        public enum Core
+        {
+            [Description("NAVAL")]
+            NAVAL = 1,
+            [Description("AERIAL")]
+            AERIAL = 2,
+            [Description("ARMOURED")]
+            ARMOURED = 3          
+        }
 
-      
+
+
     }
 
     public static class ExtensionMethod

@@ -1,29 +1,72 @@
-﻿/*
- *
- *   INSPINIA - Responsive Admin Theme
- *   version 2.2
- *
-*/
+﻿@font-face {
+  font-family: 'heroic';
+  src: url("../fonts/heroic.ttf") format("truetype"); }
+
+.dystopianSiteContainer {
+  font-family: heroic;
+  font-size: 20px; }
+
+.nav > li > a {
+  display: inline-block !important; }
+
+span.dystopianLabel {
+  color: #9d9d9d;
+  position: relative;
+  padding: 0 10px 0 0;
+  line-height: 20px;
+  top: 3px; }
+
+span.dystopian {
+  color: #9d9d9d;
+  position: relative;
+  padding: 0 100px 0 0;
+  line-height: 20px; }
+
+.select2-container {
+  margin-right: 60px; }
+
 body {
   background-image: url("BG.jpg");
-  /* Full height */
+  width: 100%;
   height: 100%;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
 
-.dystopian-sidebar {
-  position: fixed;
-  width: 437px;
-  z-index: 50;
-  height: 100%;
-  background-color: gray; }
+.container-dystopian {
+  margin-top: 50px; }
 
-.dystopian-container {
-  margin-left: 437px; }
+.dystopian-logo {
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 350px; }
+
+.navbar-dystopian {
+  background-color: #585960; }
+
+.img-flag {
+  width: 15%; }
+
+.img-core {
+  width: 20%;
+  margin-top: -4px; }
+
+#dystopianBody {
+  background-color: white; }
+
+#dystopianSummary {
+  background-color: white;
+  margin-left: 20px; }
+
+#dystopianMenu {
+  background-color: white;
+  margin-right: 20px;
+  margin-left: 40px; }
 

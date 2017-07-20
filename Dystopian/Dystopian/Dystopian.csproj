@@ -152,11 +152,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\220df6e3419502c8d8ed30381a633de1_original.png" />
     <Content Include="Content\BG.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Core\aerial.png" />
+    <Content Include="Content\Core\armoured.png" />
+    <Content Include="Content\Core\naval.png" />
+    <Content Include="Content\Flags\coa.jpg" />
+    <Content Include="Content\Flags\eotbs.jpg" />
+    <Content Include="Content\Flags\fsa.jpg" />
+    <Content Include="Content\Flags\kob.jpg" />
+    <Content Include="Content\Flags\PE.jpg" />
+    <Content Include="Content\Flags\RC.jpg" />
+    <Content Include="Content\Flags\RoF.jpg" />
     <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\font-awesome.css" />
@@ -568,7 +579,7 @@
     <None Include="Scripts\Boilerplate\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Boilerplate\jquery.slimscroll.js" />
     <Content Include="Scripts\Boilerplate\jquery.slimscroll.min.js" />
-    <Content Include="Scripts\Plugins\skin.config.min.js" />
+    <Content Include="Scripts\skin.config.min.js" />
     <Content Include="Scripts\Boilerplate\jquery-3.1.1.js" />
     <Content Include="Scripts\Boilerplate\jquery-3.1.1.min.js" />
     <Content Include="Scripts\Boilerplate\jquery-3.1.1.min.map" />
