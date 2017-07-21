@@ -26,5 +26,6 @@ namespace DataAccess.Entities
         public virtual List<Ship> Ships { get; set; }
         public int Minimum { get; set; }
         public int Maximum { get; set; }
+        public int CurrentNumber { get; set; }
     }
 }

@@ -44,44 +44,51 @@ namespace DataAccess.Migrations
                 {
                     Name = "Covenant of Antarctica",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Free Nations"),
-                    Acronym = "CoA"
+                    Acronym = "CoA",
+                    MajorFaction = true
                 },
                 new Faction
                 {
                     Name = "Empire of the Blazing Sun",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
-                    Acronym = "EotBS"
+                    Acronym = "EotBS",
+                    MajorFaction = true
                 },
                 new Faction
                 {
                     Name = "Federated States of America",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
-                    Acronym = "FSA"
+                    Acronym = "FSA",
+                    MajorFaction = true
                 },
                 new Faction
                 {
                     Name = "Kingdom of Britannia",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
-                    Acronym = "KoB"
+                    Acronym = "KoB",
+                    MajorFaction = true
                 },
                 new Faction
                 {
                     Name = "Prussian Empire",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
-                    Acronym = "PE"
+                    Acronym = "PE",
+                    MajorFaction = true
                 },
 
                 new Faction
                 {
                     Name = "Republique of France",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
-                    Acronym = "RoF"
+                    Acronym = "RoF",
+                    MajorFaction = true
                 },
                 new Faction
                 {
                     Name = "Russian Coalition",
                     SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
-                    Acronym = "RC"
+                    Acronym = "RC",
+                    MajorFaction = true
                 }
             };
             foreach (var faction in factions)

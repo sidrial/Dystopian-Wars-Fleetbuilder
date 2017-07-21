@@ -17,5 +17,6 @@ namespace DataAccess.Entities
         public string Name { get; set; }
         public SuperBlock SuperBlock { get; set; }
         public string Acronym { get; set; }
+        public bool MajorFaction { get; set; }
     }
 }

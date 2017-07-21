@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201707210655071_AddedFactionsAndSuperblocks.Designer.cs">
       <DependentUpon>201707210655071_AddedFactionsAndSuperblocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707212013144_AddedCurrentNumberToSquadronEntry.cs" />
+    <Compile Include="Migrations\201707212013144_AddedCurrentNumberToSquadronEntry.Designer.cs">
+      <DependentUpon>201707212013144_AddedCurrentNumberToSquadronEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707212019392_AddedMajorFactionBoolToFaction.cs" />
+    <Compile Include="Migrations\201707212019392_AddedMajorFactionBoolToFaction.Designer.cs">
+      <DependentUpon>201707212019392_AddedMajorFactionBoolToFaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707210655071_AddedFactionsAndSuperblocks.resx">
       <DependentUpon>201707210655071_AddedFactionsAndSuperblocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707212013144_AddedCurrentNumberToSquadronEntry.resx">
+      <DependentUpon>201707212013144_AddedCurrentNumberToSquadronEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707212019392_AddedMajorFactionBoolToFaction.resx">
+      <DependentUpon>201707212019392_AddedMajorFactionBoolToFaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
