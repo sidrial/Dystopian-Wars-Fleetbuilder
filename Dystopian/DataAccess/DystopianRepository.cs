@@ -14,8 +14,10 @@ namespace DataAccess
         public DbSet<Option> Options { get; set; }
         public DbSet<Squadron> Squadrons { get; set; }
         public DbSet<SquadronEntry> SquadronEntries { get; set; }
+        public DbSet<Faction> Factions { get; set; }
+        public DbSet<SuperBlock> SuperBlocks {get; set; }
 
-        public DystopianRepository(): base()
+        public DystopianRepository(): base("DystopianWarsDatabase")
         {
             
         }

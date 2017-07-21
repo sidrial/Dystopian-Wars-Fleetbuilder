@@ -52,6 +52,7 @@
     <Compile Include="Entities\Option.cs" />
     <Compile Include="Entities\Ship.cs" />
     <Compile Include="Entities\Squadron.cs" />
+    <Compile Include="Entities\SuperBlock.cs" />
     <Compile Include="Migrations\201707200828052_Initial.cs" />
     <Compile Include="Migrations\201707200828052_Initial.Designer.cs">
       <DependentUpon>201707200828052_Initial.cs</DependentUpon>
@@ -59,6 +60,10 @@
     <Compile Include="Migrations\201707200921073_AddedFactions.cs" />
     <Compile Include="Migrations\201707200921073_AddedFactions.Designer.cs">
       <DependentUpon>201707200921073_AddedFactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707210655071_AddedFactionsAndSuperblocks.cs" />
+    <Compile Include="Migrations\201707210655071_AddedFactionsAndSuperblocks.Designer.cs">
+      <DependentUpon>201707210655071_AddedFactionsAndSuperblocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707200921073_AddedFactions.resx">
       <DependentUpon>201707200921073_AddedFactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707210655071_AddedFactionsAndSuperblocks.resx">
+      <DependentUpon>201707210655071_AddedFactionsAndSuperblocks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

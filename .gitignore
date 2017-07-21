@@ -259,7 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-
-web.config
-/Dystopian/Dystopian/Web.Release.config
-/Dystopian/Dystopian/Web.Debug.config
+/Dystopian/Dystopian/secretConnectionStrings.config

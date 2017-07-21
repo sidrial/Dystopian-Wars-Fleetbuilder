@@ -2,6 +2,7 @@
     SelectedFaction = ko.observable<string>("");
     SelectedCore = ko.observable<string>("");
     SelectedRules = ko.observable<string>("");
+    //TODO: Refactor zodat we Squadrons gebruiken ipv Ships.
     AvailableModels = ko.observableArray<Ship>();
     FleetList = ko.observableArray<Squadron>();
     TotalPoints = ko.computed(function () {       
