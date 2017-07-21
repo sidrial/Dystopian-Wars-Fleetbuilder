@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    public enum Faction
+    public class Faction
     {
-        [Description("Covenant of Antarctica")]
-        COA = 1,
-        [Description("Federates States of America")]
-        FSA = 2,
-        [Description("Russian Coalition")]
-        RC = 3,
-        [Description("Kingdom of Britannia")]
-        KOB = 4,
-        [Description("Empire of the Blazing Sun")]
-        EOTBS = 5,
-        [Description("Republique of France")]
-        ROF = 6,
-        [Description("Prussian Empire")]
-        PE = 7
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid FactionID { get; set; }
+        public string Name { get; set; }
+        public SuperBlock SuperBlock { get; set; }
+        public string Acronym { get; set; }
     }
 }

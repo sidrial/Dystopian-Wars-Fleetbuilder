@@ -17,6 +17,79 @@ namespace DataAccess.Migrations
 
         protected override void Seed(DataAccess.DystopianRepository context)
         {
+            var superBlocks = new List<SuperBlock>
+            {
+                new SuperBlock()
+                {
+                    Name = "Grand Coalition"
+                },
+                new SuperBlock()
+                {
+                    Name = "Imperial Bond"
+                },
+                new SuperBlock()
+                {
+                    Name = "Free Nations"
+                }
+            };
+            foreach (var superBlock in superBlocks)
+            {
+                context.SuperBlocks.AddOrUpdate(s => s.Name, superBlock);
+            }
+            context.SaveChanges();
+
+            var factions = new List<Faction>
+            {
+                new Faction
+                {
+                    Name = "Covenant of Antarctica",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Free Nations"),
+                    Acronym = "CoA"
+                },
+                new Faction
+                {
+                    Name = "Empire of the Blazing Sun",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
+                    Acronym = "EotBS"
+                },
+                new Faction
+                {
+                    Name = "Federated States of America",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
+                    Acronym = "FSA"
+                },
+                new Faction
+                {
+                    Name = "Kingdom of Britannia",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
+                    Acronym = "KoB"
+                },
+                new Faction
+                {
+                    Name = "Prussian Empire",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
+                    Acronym = "PE"
+                },
+
+                new Faction
+                {
+                    Name = "Republique of France",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Imperial Bond"),
+                    Acronym = "RoF"
+                },
+                new Faction
+                {
+                    Name = "Russian Coalition",
+                    SuperBlock = context.SuperBlocks.FirstOrDefault(s => s.Name == "Grand Coalition"),
+                    Acronym = "RC"
+                }
+            };
+            foreach (var faction in factions)
+            {
+                context.Factions.AddOrUpdate(f => f.Name, faction);
+            }
+            context.SaveChanges();
+
             var ships = new List<Ship>
             {
                 new Ship
@@ -116,7 +189,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Aristotle",
-                    FactionID = Faction.COA
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Covenant of Antarctica")
                 },
                 new Squadron
                 {
@@ -133,7 +206,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Pericles",
-                    FactionID = Faction.COA
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Covenant of Antarctica")
                 },
                 new Squadron
                 {
@@ -150,7 +223,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Zeno Squadron",
-                    FactionID = Faction.COA
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Covenant of Antarctica")
                 },
                 new Squadron
                 {
@@ -167,7 +240,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Thales",
-                    FactionID = Faction.COA
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Covenant of Antarctica")
                 },
                 new Squadron
                 {
@@ -184,7 +257,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Plutarch",
-                    FactionID = Faction.COA
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Covenant of Antarctica")
                 },
                 new Squadron
                 {
@@ -201,7 +274,7 @@ namespace DataAccess.Migrations
                         }
                     },
                     Name = "Avenger",
-                    FactionID = Faction.KOB
+                    FactionID = context.Factions.FirstOrDefault(f => f.Name == "Kingdom of Britannia")
                 }
             };
             foreach (var squadron in squadrons)
