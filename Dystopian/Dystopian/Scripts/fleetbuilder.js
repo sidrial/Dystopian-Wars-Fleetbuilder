@@ -4,6 +4,7 @@ var FleetViewModel = (function () {
         this.SelectedFaction = ko.observable("");
         this.SelectedCore = ko.observable("");
         this.SelectedRules = ko.observable("");
+        //TODO: Refactor zodat we Squadrons gebruiken ipv Ships.
         this.AvailableModels = ko.observableArray();
         this.FleetList = ko.observableArray();
         this.TotalPoints = ko.computed(function () {

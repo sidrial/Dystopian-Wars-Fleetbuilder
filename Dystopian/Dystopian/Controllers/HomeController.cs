@@ -25,7 +25,8 @@ namespace Dystopian.Controllers
             {
                 try
                 {
-                    var fleet = repository.Squadrons.Where(s => s.FactionID.Name == faction.GetDescription()).ToList();
+                    var factionName = faction.GetDescription();
+                    var fleet = repository.Squadrons.Where(s => s.FactionID.Name == factionName).ToList();
                     return Json(fleet, JsonRequestBehavior.AllowGet);
                 }
                 catch (NullReferenceException)
