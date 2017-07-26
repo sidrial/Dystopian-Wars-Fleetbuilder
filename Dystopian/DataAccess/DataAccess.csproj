@@ -84,6 +84,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="secretConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707200828052_Initial.resx">

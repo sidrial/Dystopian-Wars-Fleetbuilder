@@ -141,6 +141,14 @@ namespace DataAccess.Migrations
                 },
                 new Ship
                 {
+                    Name = "Kepler",
+                    BasePoints = 95,
+                    CurrentPoints = 95,
+                    Size = "M",
+                    Options = new List<Option>()
+                },
+                new Ship
+                {
                     Name = "Pericles",
                     BasePoints = 170,
                     CurrentPoints = 170,
@@ -192,7 +200,28 @@ namespace DataAccess.Migrations
                             Ships = new List<Ship>
                             {
                                 context.Ships.FirstOrDefault(s => s.Name == "Aristotle")
-                            }
+                            },
+                            IsAttachment = false
+                        },
+                        new SquadronEntry
+                        {
+                            Maximum = 1,
+                            Minimum = 0,
+                            Ships = new List<Ship>
+                            {
+                                context.Ships.FirstOrDefault(s => s.Name == "Kepler")
+                            },
+                            IsAttachment = true
+                        },
+                        new SquadronEntry
+                        {
+                            Maximum = 3,
+                            Minimum = 0,
+                            Ships = new List<Ship>
+                            {
+                                context.Ships.FirstOrDefault(s => s.Name == "Galen")
+                            },
+                            IsAttachment = true
                         }
                     },
                     Name = "Aristotle",
@@ -221,8 +250,8 @@ namespace DataAccess.Migrations
                     {
                         new SquadronEntry
                         {
-                            Maximum = 1,
-                            Minimum = 3,
+                            Maximum = 3,
+                            Minimum = 1,
                             Ships = new List<Ship>
                             {
                                 context.Ships.FirstOrDefault(s => s.Name == "Zeno")
@@ -238,8 +267,8 @@ namespace DataAccess.Migrations
                     {
                         new SquadronEntry
                         {
-                            Maximum = 2,
-                            Minimum = 5,
+                            Maximum = 5,
+                            Minimum = 2,
                             Ships = new List<Ship>
                             {
                                 context.Ships.FirstOrDefault(s => s.Name == "Thales")
@@ -255,8 +284,8 @@ namespace DataAccess.Migrations
                     {
                         new SquadronEntry
                         {
-                            Maximum = 2,
-                            Minimum = 3,
+                            Maximum = 3,
+                            Minimum = 2,
                             Ships = new List<Ship>
                             {
                                 context.Ships.FirstOrDefault(s => s.Name == "Plutarch")

@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Dystopian/Dystopian/secretConnectionStrings.config
 /Dystopian/DystopianDatabaseInterface/secretConnectionStrings.config
+/Dystopian/DataAccess/secretConnectionStrings.config
