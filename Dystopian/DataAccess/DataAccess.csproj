@@ -51,6 +51,7 @@
     <Compile Include="Entities\Faction.cs" />
     <Compile Include="Entities\Option.cs" />
     <Compile Include="Entities\Ship.cs" />
+    <Compile Include="Entities\Size.cs" />
     <Compile Include="Entities\Squadron.cs" />
     <Compile Include="Entities\SuperBlock.cs" />
     <Compile Include="Migrations\201707200828052_Initial.cs" />

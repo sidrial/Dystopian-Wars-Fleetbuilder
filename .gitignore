@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Dystopian/Dystopian/secretConnectionStrings.config
+/Dystopian/DystopianDatabaseInterface/secretConnectionStrings.config
