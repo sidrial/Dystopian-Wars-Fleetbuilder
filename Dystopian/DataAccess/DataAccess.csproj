@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201707212019392_AddedMajorFactionBoolToFaction.Designer.cs">
       <DependentUpon>201707212019392_AddedMajorFactionBoolToFaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707260818224_AddedIsAttachment.cs" />
+    <Compile Include="Migrations\201707260818224_AddedIsAttachment.Designer.cs">
+      <DependentUpon>201707260818224_AddedIsAttachment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707212019392_AddedMajorFactionBoolToFaction.resx">
       <DependentUpon>201707212019392_AddedMajorFactionBoolToFaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707260818224_AddedIsAttachment.resx">
+      <DependentUpon>201707260818224_AddedIsAttachment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

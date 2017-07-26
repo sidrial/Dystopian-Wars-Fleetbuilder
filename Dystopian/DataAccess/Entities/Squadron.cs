@@ -27,5 +27,6 @@ namespace DataAccess.Entities
         public int Minimum { get; set; }
         public int Maximum { get; set; }
         public int CurrentNumber { get; set; }
+        public bool IsAttachment { get; set; }
     }
 }
