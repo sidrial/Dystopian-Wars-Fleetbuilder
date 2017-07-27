@@ -1,9 +1,11 @@
 ﻿class FleetViewModel {
     SelectedFaction = ko.observable<string>("");
+    SelectedAlly = ko.observable<string>("");
     SelectedCore = ko.observable<string>("");
     SelectedRules = ko.observable<string>("");
     //TODO: Refactor zodat we Squadrons gebruiken ipv Ships.
-    AvailableModels = ko.observableArray<Ship>();
+    AvailableFactionModels = ko.observableArray<Ship>();
+    AvailableAlliedModels = ko.observableArray<Ship>();
     FleetList = ko.observableArray<Squadron>();
     TotalPoints = ko.computed(function () {       
         var total = 0;
@@ -56,10 +58,46 @@
             cache: false,
             url: url
         });
+        
+        getRequest.done((data: any) => {
+            this.AvailableFactionModels(data);      
+            $("#faction1").select2({
+                templateResult: formatFaction,
+                templateSelection: formatFaction
+            });
+
+            $("#allied").select2({
+                templateResult: formatFaction,
+                templateSelection: formatFaction
+            });
+
+            $('[data-toggle="tooltip"]').tooltip(); 
+
+            function formatFaction(faction) {
+                if (!faction.id) { return faction.text; }
+                var $faction = $(
+                    '<span><img src="Content/Flags/' + faction.element.value.toLowerCase() + '.jpg" class="img-flag" /> ' + faction.text + '</span>'
+                );
+                return $faction;
+            };
+
+       
+        });       
+    }
+
+    GetAlliedModels = () => {
+        var url = `${$("body").data("root")}Home/GetFactionModels?faction=${this.SelectedAlly()}`;
+        var getRequest = $.ajax({
+            cache: false,
+            url: url
+        });
 
         getRequest.done((data: any) => {
-            this.AvailableModels(data);
-        });      
+            this.AvailableAlliedModels(data);
+         
+        });
+
+      
     }
 
     addToSelectedItems = (item: Ship) => {
@@ -96,6 +134,14 @@
         this.SelectedFaction.subscribe(newFaction => {
           this.GetFactionModels()
         });
+
+        this.SelectedAlly.subscribe(newFaction => {
+            this.GetAlliedModels()
+        });
+
+
+     
+
     }
 
 }
@@ -109,12 +155,15 @@ $(document).ready(() => {
         templateSelection: formatFaction
     });  
 
+   
     $("#core").select2({
         templateResult: formatCore,
         templateSelection: formatCore
     });  
     $("#rules").select2({
     });  
+
+
 
     function formatFaction(faction) {
         if (!faction.id) { return faction.text; }
@@ -132,6 +181,8 @@ $(document).ready(() => {
         return $core;
     };
 
+
+  
    
     return observe;
 });

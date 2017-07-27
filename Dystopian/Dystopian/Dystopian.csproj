@@ -548,6 +548,18 @@
     <Content Include="Content\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Content\Summary\battleship.svg" />
+    <Content Include="Content\Summary\encirclement.svg" />
+    <Content Include="Content\Summary\large.png" />
+    <Content Include="Content\Summary\medium.png" />
+    <Content Include="Content\Summary\military-fort.svg" />
+    <Content Include="Content\Summary\musket.svg" />
+    <Content Include="Content\Summary\shaking-hands.svg" />
+    <Content Include="Content\Summary\shield.svg" />
+    <Content Include="Content\Summary\small.png" />
+    <Content Include="Content\Summary\tank.svg" />
+    <Content Include="Content\Summary\Untitled.png" />
+    <Content Include="Content\Summary\zeppelin.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

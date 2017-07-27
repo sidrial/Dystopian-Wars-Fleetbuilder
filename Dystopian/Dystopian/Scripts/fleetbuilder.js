@@ -2,10 +2,12 @@ var FleetViewModel = (function () {
     function FleetViewModel() {
         var _this = this;
         this.SelectedFaction = ko.observable("");
+        this.SelectedAlly = ko.observable("");
         this.SelectedCore = ko.observable("");
         this.SelectedRules = ko.observable("");
         //TODO: Refactor zodat we Squadrons gebruiken ipv Ships.
-        this.AvailableModels = ko.observableArray();
+        this.AvailableFactionModels = ko.observableArray();
+        this.AvailableAlliedModels = ko.observableArray();
         this.FleetList = ko.observableArray();
         this.TotalPoints = ko.computed(function () {
             var total = 0;
@@ -52,7 +54,34 @@ var FleetViewModel = (function () {
                 url: url
             });
             getRequest.done(function (data) {
-                _this.AvailableModels(data);
+                _this.AvailableFactionModels(data);
+                $("#faction1").select2({
+                    templateResult: formatFaction,
+                    templateSelection: formatFaction
+                });
+                $("#allied").select2({
+                    templateResult: formatFaction,
+                    templateSelection: formatFaction
+                });
+                $('[data-toggle="tooltip"]').tooltip();
+                function formatFaction(faction) {
+                    if (!faction.id) {
+                        return faction.text;
+                    }
+                    var $faction = $('<span><img src="Content/Flags/' + faction.element.value.toLowerCase() + '.jpg" class="img-flag" /> ' + faction.text + '</span>');
+                    return $faction;
+                }
+                ;
+            });
+        };
+        this.GetAlliedModels = function () {
+            var url = $("body").data("root") + "Home/GetFactionModels?faction=" + _this.SelectedAlly();
+            var getRequest = $.ajax({
+                cache: false,
+                url: url
+            });
+            getRequest.done(function (data) {
+                _this.AvailableAlliedModels(data);
             });
         };
         this.addToSelectedItems = function (item) {
@@ -79,6 +108,9 @@ var FleetViewModel = (function () {
         };
         this.SelectedFaction.subscribe(function (newFaction) {
             _this.GetFactionModels();
+        });
+        this.SelectedAlly.subscribe(function (newFaction) {
+            _this.GetAlliedModels();
         });
     }
     return FleetViewModel;

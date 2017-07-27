@@ -4,6 +4,7 @@
 }
 
 .dystopianSiteContainer {
+    text-transform: uppercase;
     font-family: heroic;
     font-size: 20px;
 }
@@ -29,7 +30,7 @@ span.dystopian {
 }
 
 .select2-container{
-    margin-right: 60px;
+    margin-right: 10px;
 }
 
 
@@ -67,6 +68,7 @@ body {
 
 .img-flag {
     width: 15%;
+    margin-top: -5px;
 }
 
 .img-core {
@@ -76,17 +78,48 @@ body {
 
 
 #dystopianBody {
-    background-color: white;
-    
+    background-color: white;  
 }
 
 #dystopianSummary {
     background-color: white;
-    margin-left: 20px;
+  
 } 
  
  #dystopianMenu {
-    background-color: white;
-    margin-right: 20px;
-    margin-left: 40px;
+    background-color: white; 
+}
+
+ .dystopianWell {
+     background-color: aliceblue;
+ }
+
+#dystopianMenu {
+    .panel-heading {
+        background-color: lightgray;
+    }
+
+    .factionDropdown {
+        //background-color: lightgray;
+        //margin-top: -17px;
+    }
+}
+
+.summaryHeader {
+    background-color: #585960;
+    color: white;
+    margin-top: 20px;
+}
+
+.summaryBody {
+    margin-top: 20px;
+}
+
+.summaryStats {
+    background-color: #585960;
+    color: white;
+}
+
+.iconStatBox {
+    font-size: 1.5em;
 }

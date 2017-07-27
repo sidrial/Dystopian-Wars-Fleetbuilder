@@ -3,6 +3,7 @@
   src: url("../fonts/heroic.ttf") format("truetype"); }
 
 .dystopianSiteContainer {
+  text-transform: uppercase;
   font-family: heroic;
   font-size: 20px; }
 
@@ -23,7 +24,7 @@ span.dystopian {
   line-height: 20px; }
 
 .select2-container {
-  margin-right: 60px; }
+  margin-right: 10px; }
 
 body {
   background-image: url("BG.jpg");
@@ -52,7 +53,8 @@ body {
   background-color: #585960; }
 
 .img-flag {
-  width: 15%; }
+  width: 15%;
+  margin-top: -5px; }
 
 .img-core {
   width: 20%;
@@ -62,11 +64,29 @@ body {
   background-color: white; }
 
 #dystopianSummary {
-  background-color: white;
-  margin-left: 20px; }
+  background-color: white; }
 
 #dystopianMenu {
-  background-color: white;
-  margin-right: 20px;
-  margin-left: 40px; }
+  background-color: white; }
+
+.dystopianWell {
+  background-color: aliceblue; }
+
+#dystopianMenu .panel-heading {
+  background-color: lightgray; }
+
+.summaryHeader {
+  background-color: #585960;
+  color: white;
+  margin-top: 20px; }
+
+.summaryBody {
+  margin-top: 20px; }
+
+.summaryStats {
+  background-color: #585960;
+  color: white; }
+
+.iconStatBox {
+  font-size: 1.5em; }
 

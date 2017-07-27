@@ -5,144 +5,223 @@
 @section scripts{
     @Scripts.Render("~/bundles/fleetbuilder")
 }
-
+<!-- ko if: AvailableFactionModels().length > 0 -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-2" id="dystopianMenu">
-           
-            @*<div class="panel-group panel-dystopian" id="accordion">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="panel-group panel-dystopian" id="dystopianMenu">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                Collapsible Group 1
-                            </a>
-                        </h4>
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#dystopianMenu" href="#collapse1">
+                        <span>Core models</span>
+
                     </div>
                     <div id="collapse1" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
+                            <div class="factionDropdown">
+                                <select id="faction1" class="form-control select2" data-placeholder="Select faction"
+                                        data-bind="selectedOptions: SelectedFaction" disabled style="width:12em;">
+                                    <option></option>
+                                    <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
+                                    <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
+                                    <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
+                                </select>
+                            </div>
+                            <div data-bind="foreach: AvailableFactionModels">
+                                <div class="col-sm-12" id="ShipModel">
+                                    <div class="col-sm-12" id="ShipHeader" data-bind="text: Name"></div>
+                                    <div class="col-sm-3" id="ShipPoints" data-bind="text: BasePoints"></div>
+                                    <div class="col-sm-3" id="ShipSize" data-bind="text: Size"></div>
+                                    <div class="col-sm-3 col-xs-offset-3" id="ShipAdd" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                Collapsible Group 2
-                            </a>
-                        </h4>
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#dystopianMenu" href="#collapse2">
+                        <span>Allied models</span>
+
+
                     </div>
+
                     <div id="collapse2" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
+                            <div class="factionDropdown">
+                                <select id="allied" class="form-control select2" data-placeholder="Select allied faction"
+                                        data-bind="selectedOptions: SelectedAlly" style="width:12em;">
+                                    <option></option>
+                                    <option value="@Dystopian.Enums.Faction.COA">@Dystopian.Enums.Faction.COA.GetDescription()</option>
+                                    <option value="@Dystopian.Enums.Faction.FSA">@Dystopian.Enums.Faction.FSA.GetDescription()</option>
+                                    <option value="@Dystopian.Enums.Faction.KOB">@Dystopian.Enums.Faction.KOB.GetDescription()</option>
+                                </select>
+                            </div>
+                            <table class="table table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Points</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: AvailableAlliedModels">
+                                    <tr>
+                                        <td data-bind="text: Name"></td>
+                                        <td data-bind="text: BasePoints"></td>
+                                        <td><button type="button" class="btn btn-xs btn-primary" title="Add" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                Collapsible Group 3
-                            </a>
-                        </h4>
+            </div>
+        </div>
+      
+        <div class="col-sm-12 col-md-6 col-lg-2 col-lg-push-7">
+            <div id="dystopianSummary">             
+                <div id="ensign">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="col-sm-12 summaryHeader"><input type="radio" value="Ensign" data-bind="checked: SelectedRules" /> Ensign</div>
+                        </div>
                     </div>
-                    <div id="collapse3" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
+                    <div class="row summaryBody">
+                        <div class="col-sm-3 text-center">
+                            <img src="~/Content/Summary/Untitled.png" style="width: 100%; margin-left: 15px;" />
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="col-sm-12 summaryStats iconStatBox" style="padding: 30px 12px;">
+                                <span data-bind="text: TotalPoints"></span> / <span data-bind="text: CappedPoints"></span>                             
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>*@
-          
-            <div>
-                <!-- ko if: AvailableModels().length > 0 -->
-                <table class="table table">
+
+                <div id="captain">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="col-sm-12 summaryHeader"><input type="radio" value="Captain" data-bind="checked: SelectedRules" /> Captain</div>
+                        </div>
+                    </div>
+                    <div class="row summaryBody">
+                        <div class="col-sm-3 text-center">
+                            <img src="~/Content/Summary/Untitled.png" style="width: 100%; margin-left: 15px;" />
+                        </div>
+                        <div class="col-sm-9" data-bind="visible: SelectedRules() == 'Captain' || SelectedRules() == 'Commodore' ">
+                            <div class="col-sm-12 summaryStats">
+                                <div class="row">
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageMedium"></span><span>%</span>
+                                        <img src="~/Content/Summary/battleship.svg" data-toggle="tooltip" title="Naval" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageSmall"></span><span>%</span>
+                                        <img src="~/Content/Summary/zeppelin.svg" data-toggle="tooltip" title="Aerial" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageLarge"></span><span>%</span>
+                                        <img src="~/Content/Summary/tank.svg" data-toggle="tooltip" title="Armoured" />
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageMedium"></span><span>%</span>
+                                        <img src="~/Content/Summary/musket.svg" data-toggle="tooltip" title="Infantry" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageSmall"></span><span>%</span>
+                                        <img src="~/Content/Summary/military-fort.svg" data-toggle="tooltip" title="Fortifications" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageLarge"></span><span>%</span>
+                                        <img src="~/Content/Summary/shaking-hands.svg" data-toggle="tooltip" title="Allied squadrons" />
+                                    </div>
+                                </div>  
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="commodore">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="col-sm-12 summaryHeader"><input type="radio" value="Commodore" data-bind="checked: SelectedRules" /> Commodore</div>
+                        </div>
+                    </div>
+                    <div class="row summaryBody">
+                        <div class="col-sm-3 text-center">
+                            <img src="~/Content/Summary/Untitled.png" style="width: 100%; margin-left: 15px;" />
+                        </div>
+                        <div class="col-sm-9" data-bind="visible: SelectedRules() == 'Commodore' ">
+                            <div class="col-sm-12 summaryStats">
+                                <div class="row">
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageMedium"></span><span>%</span>
+                                        <img src="~/Content/Summary/shield.svg" data-toggle="tooltip" title="Main force" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                        <span data-bind="text: PercentageSmall"></span><span>%</span>
+                                        <img src="~/Content/Summary/encirclement.svg" data-toggle="tooltip" title="Strategic force" />
+                                    </div>
+                                    <div class="col-sm-4 iconStatBox">
+                                      
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+
+            </div>
+        </div>
+    
+
+        <div class="col-sm-12 col-md-12 col-lg-7 col-lg-pull-2">
+            <div id="dystopianBody">
+                <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Model</th>
-                            <th>Points</th>
-                            <th></th>
+                            <th class="col-md-1">Model</th>
+                            <th class="col-md-1">Size</th>
+                            <th class="col-md-1">Points</th>
+                            <th class="col-md-1">Squadron</th>
+                            <th class="col-md-6">Options</th>
+                            <th class="col-md-1"></th>
                         </tr>
                     </thead>
-                    <tbody data-bind="foreach: AvailableModels">
-                        <tr>
+                    <tbody data-bind="foreach: FleetList">
+                        <tr style="height: 60px">
                             <td data-bind="text: Name"></td>
-                            <td data-bind="text: BasePoints"></td>
-                            <td><button type="button" class="btn btn-xs btn-primary" title="Add" data-bind="event: { click: $parent.addToSelectedItems }"><span class="glyphicon glyphicon-plus"></span></button></td>
+                            <td>(<span data-bind="text: Size()"></span>)</td>
+                            <td data-bind="text: CurrentPoints"></td>
+                            <td>
+                                <div class="btn-group" role="group" data-bind="visible: Size() != 'L'">
+                                    <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.decreaseSquadronSize }"><span class="fa fa-chevron-left"></span></button>
+                                    <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.increaseSquadronSize }"><span class="fa fa-chevron-right"></span></button>
+                                </div>
+                            </td>
+                            <td align="left" class="squadronInfo">
+                                <!-- ko foreach: Ships -->
+                                <img style="opacity:0.3" title="Options.." data-title="Options..." data-bind="attr: { src: $parent.Url(), class: 'size_' + Size()}, css: { 'ImageActive hvr-pulse-grow' : Active()}, event: { click: $root.showOptions }" />
+
+                                <!-- /ko -->
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-xs btn-primary" title="Remove" data-bind="event: { click: $parent.removeFromSelectedItems }"><span class="fa fa-close"></span></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <!-- /ko -->
             </div>
-
-        </div>
-        <div class="col-sm-12 col-md-8" id="dystopianBody">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="col-md-1">Model</th>
-                        <th class="col-md-1">Size</th>
-                        <th class="col-md-1">Points</th>
-                        <th class="col-md-1">Squadron</th>
-                        <th class="col-md-6">Options</th>
-                        <th class="col-md-1"></th>
-                    </tr>
-                </thead>
-                <tbody data-bind="foreach: FleetList">
-                    <tr style="height: 60px">
-                        <td data-bind="text: Name"></td>
-                        <td>(<span data-bind="text: Size()"></span>)</td>
-                        <td data-bind="text: CurrentPoints"></td>
-                        <td>
-                            <div class="btn-group" role="group" data-bind="visible: Size() != 'L'">
-                                <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.decreaseSquadronSize }"><span class="fa fa-chevron-left"></span></button>
-                                <button type="button" class="btn btn-xs btn-primary" data-bind="event: { click: $parent.increaseSquadronSize }"><span class="fa fa-chevron-right"></span></button>
-                            </div>
-                        </td>
-                        <td align="left" class="squadronInfo">
-                            <!-- ko foreach: Ships -->
-                            <img style="opacity:0.3" title="Options.." data-title="Options..." data-bind="attr: { src: $parent.Url(), class: 'size_' + Size()}, css: { 'ImageActive hvr-pulse-grow' : Active()}, event: { click: $root.showOptions }" />
-
-                            <!-- /ko -->
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-xs btn-primary" title="Remove" data-bind="event: { click: $parent.removeFromSelectedItems }"><span class="fa fa-close"></span></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-12 col-md-1" id="dystopianSummary" style="text-align:center">
-            <div class="well" style="margin-top:15px;">
-                <p><span data-bind="text: TotalPoints"></span> / <span data-bind="text: CappedPoints"></span></p>
-                <p>FLEET VALUE</p>
-            </div>
-            <div class="well">
-                <p><span data-bind="text: PercentageLarge"></span><span>%</span></p>
-                <p>LARGE</p>
-            </div>
-            <div class="well">
-                <p><span data-bind="text: PercentageMedium"></span><span>%</span></p>
-                <p>MEDIUM</p>
-            </div>
-            <div class="well">
-                <p><span data-bind="text: PercentageSmall"></span><span>%</span></p>
-                <p>SMALL</p>
-            </div>
-
         </div>
     </div>
 </div>
+<!-- /ko -->
 <!-- ko if: $root.CurrentShip().Name != null -->
 @Html.Partial("_shipOptions", false)
 <!-- /ko -->

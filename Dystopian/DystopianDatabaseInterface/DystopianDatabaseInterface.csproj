@@ -206,7 +206,7 @@
     <Content Include="Views\Squadrons\Details.cshtml" />
     <Content Include="Views\Squadrons\Edit.cshtml" />
     <Content Include="Views\Squadrons\Index.cshtml" />
-    <Content Include="secretConnectionStrings.config" />
+    <None Include="secretConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
